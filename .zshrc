@@ -63,6 +63,7 @@ plugins=(
 	brew
 	web-search
 	osx
+	docker
 )
 
 source $ZSH/oh-my-zsh.sh
