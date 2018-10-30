@@ -51,6 +51,7 @@ syntax on
 colorscheme Benokai
 let g:airline_theme='luna'
 let python_highlight_all=1
+let mapleader=" "
 
 set number
 set clipboard=unnamed
@@ -68,21 +69,20 @@ set splitbelow
 set splitright
 
 "split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 
 " remap code folding
-nnoremap <space> za
+nnoremap <leader>f za
 
 " see docstrings for folded code
 let g:SimpylFold_docstring_preview=1
-
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
@@ -95,7 +95,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
