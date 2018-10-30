@@ -38,9 +38,6 @@ Plugin 'scrooloose/nerdtree'
 " git
 Plugin 'tpope/vim-fugitive'
 
-" easy escape
-Plugin 'zhou13/vim-easyescape'
-
 " powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -86,16 +83,6 @@ nnoremap <space> za
 " see docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
-" pep 8 indents
-au BufNewFile,BufRead *.py
-	\ set tabstop=4 |
-	\ set softtabstop=4 |
-	\ set shiftwidth=4 |
-	\ set textwidth=79 |
-	\ set expandtab |
-	\ set autoindent |
-	\ set fileformat=unix
-
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
@@ -109,12 +96,6 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-" easyescape setup
-let g:easyescape_chars = { "j": 1, "k": 1 }
-let g:easyescape_timeout = 100
-cnoremap jk <ESC>
-cnoremap kj <ESC>
 
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
