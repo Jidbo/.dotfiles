@@ -60,10 +60,7 @@ ZSH_THEME="agnoster"
 plugins=(
 	git
 	pip
-	brew
-	web-search
-	osx
-	docker
+	screen
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,5 +100,5 @@ if [ -f ~/.dotfiles/.localcommands ]
 then
 	source ~/.dotfiles/.localcommands
 else
-	echo "not found"
+	echo "\n\n"
 fi
