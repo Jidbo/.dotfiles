@@ -38,6 +38,9 @@ Plugin 'scrooloose/nerdtree'
 " git
 Plugin 'tpope/vim-fugitive'
 
+" latex
+Plugin 'lervag/vimtex'
+
 " powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
