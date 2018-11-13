@@ -24,7 +24,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 
 " autocomplete 
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " search for files
 Plugin 'ctrlpvim/ctrlp.vim'
