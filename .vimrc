@@ -38,6 +38,9 @@ Plugin 'scrooloose/nerdtree'
 " git
 Plugin 'tpope/vim-fugitive'
 
+" surround blocks
+Plugin 'tpope/vim-surround'
+
 " latex
 Plugin 'lervag/vimtex'
 
@@ -91,9 +94,9 @@ nnoremap <leader>f za
 let g:SimpylFold_docstring_preview=1
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4
 
 " you complete me setup 
 let g:ycm_autoclose_preview_window_after_completion=1
