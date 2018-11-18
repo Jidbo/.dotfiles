@@ -62,9 +62,17 @@ let g:airline_theme='luna'
 let python_highlight_all=1
 let mapleader=" "
 
+" random settings
 set number
 set clipboard=unnamed
+set mouse=nvi
+set smarttab
+set visualbell
+set virtualedit=block
+set scrolloff=1
+set wildmenu
 
+" tabs and line wrap
 set tabstop=4
 set wrapmargin=8
 set softtabstop=0 noexpandtab
@@ -72,6 +80,12 @@ set shiftwidth=4
 set backspace=2
 set backspace=indent,eol,start
 set encoding=utf-8
+set autoindent
+
+" search
+set incsearch
+set hlsearch
+set smartcase
 
 " setup split
 set splitbelow
