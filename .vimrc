@@ -1,3 +1,9 @@
+" if empty(glob("~/.vim/bundle/Vundle.vim"))
+	" silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	" autocmd GUIEnter * PluginInstall
+			" \ source ~/.vimrc
+" endif
+
 set nocompatible              " required
 filetype off                  " required
 
@@ -23,8 +29,8 @@ Plugin 'vim-syntastic/syntastic'
 " pep8 checking
 Plugin 'nvie/vim-flake8'
 
-" autocomplete
-" Bundle 'Valloric/YouCompleteMe'
+" winresizer
+Plugin 'simeji/winresizer'
 
 " search for files
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -107,21 +113,19 @@ set foldlevel=99
 " remap code folding
 nnoremap <leader>f za
 
-" see docstrings for folded code
-let g:SimpylFold_docstring_preview=1
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4
 
-" you complete me setup
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
+" PLUGIN SETTINGS
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <leader>n :NERDTreeToggle<CR>
+
+" see docstrings for folded code
+let g:SimpylFold_docstring_preview=1
 
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
