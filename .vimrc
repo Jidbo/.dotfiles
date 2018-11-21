@@ -23,7 +23,7 @@ Plugin 'vim-syntastic/syntastic'
 " pep8 checking
 Plugin 'nvie/vim-flake8'
 
-" autocomplete 
+" autocomplete
 " Bundle 'Valloric/YouCompleteMe'
 
 " search for files
@@ -34,6 +34,9 @@ Plugin 'flazz/vim-colorschemes'
 
 " nert-tree
 Plugin 'scrooloose/nerdtree'
+
+" nerd-commenter
+Plugin 'scrooloose/nerdcommenter'
 
 " git
 Plugin 'tpope/vim-fugitive'
@@ -108,11 +111,11 @@ nnoremap <leader>f za
 let g:SimpylFold_docstring_preview=1
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4
 
-" you complete me setup 
+" you complete me setup
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -123,3 +126,6 @@ map <leader>n :NERDTreeToggle<CR>
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" nerd-commenter setup
+let g:NERDSpaceDelims = 1
