@@ -106,6 +106,11 @@ nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 
+" tabs
+nnoremap <leader>t :tabnew<CR> 
+nnoremap <leader>u gT
+nnoremap <leader>i gt
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -123,6 +128,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <leader>n :NERDTreeToggle<CR>
+
+" ctrl-p setup
+let g:ctrlp_working_path_mode = 'ra'
 
 " see docstrings for folded code
 let g:SimpylFold_docstring_preview=1
