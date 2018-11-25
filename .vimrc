@@ -29,6 +29,9 @@ Plugin 'vim-syntastic/syntastic'
 " pep8 checking
 Plugin 'nvie/vim-flake8'
 
+" jedi-vim
+Plugin 'davidhalter/jedi-vim'
+
 " winresizer
 Plugin 'simeji/winresizer'
 
