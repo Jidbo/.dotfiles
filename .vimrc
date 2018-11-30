@@ -83,6 +83,7 @@ set visualbell
 set virtualedit=block
 set scrolloff=1
 set wildmenu
+set term=screen-256color
 
 " tabs and line wrap
 set tabstop=4
