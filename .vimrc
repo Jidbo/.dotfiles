@@ -135,6 +135,11 @@ map <leader>n :NERDTreeToggle<CR>
 
 " ctrl-p setup
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn))?(venv)?$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " see docstrings for folded code
 let g:SimpylFold_docstring_preview=1
