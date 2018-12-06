@@ -101,6 +101,4 @@ alias la='ls -la'
 if [ -f ~/.dotfiles/.localcommands ]
 then
 	source ~/.dotfiles/.localcommands
-else
-	echo "\n\n"
 fi
