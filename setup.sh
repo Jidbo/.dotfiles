@@ -10,7 +10,7 @@ rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -rf ~/.vim
 rm -f ~/.tmux.conf
-rm -f ~/.atom
+rm -rf ~/.atom
 
 # create symbolic links to dotfiles
 ln -s ~/.dotfiles/.vimrc ~/.vimrc 
