@@ -18,8 +18,11 @@ ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 # install vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
+if ! [ -f ~/.vim/bundle/Vundle.vim ]; then
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+	echo '[INFO] Vundle is already installed.'
+fi
 # if atom is installed import configs
 if commandExists atom; then
 	if commandExists apm; then
