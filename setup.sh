@@ -1,5 +1,10 @@
 #!/usr/bin/sh
 
+commandExists()
+{
+	  command -v "$1" >/dev/null 2>&1
+}
+
 # remove all current dotfiles
 rm -f ~/.zshrc
 rm -f ~/.vimrc
@@ -15,6 +20,21 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# if atom is installed import configs
+if commandExists atom; then
+	if commandExists apm; then
+		if [ -f ~/.dotfiles/atom/packages.txt ]; then
+			apm install --packages-file ~/.dotfiles/atom/packages.txt
+		else
+			echo '[INFO] Cannot find packages.txt skipping atom package installation.'
+		fi
+	else
+		echo '[INFO] Atom is installed but the apm command is not available. Cannot import atom packages!'
+	fi
+else
+	echo '[INFO] Skipping atom configuration because it seems like you did not install atom yet!'
+fi
+
 # next steps:
-# - chage oh-my-zsh home directory
 # - install Vundle plugins from inside vim :PluginInstall
+# - backup config files first before removing them
