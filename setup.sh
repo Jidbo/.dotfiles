@@ -10,12 +10,14 @@ rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -rf ~/.vim
 rm -f ~/.tmux.conf
+rm -f ~/.atom
 
 # create symbolic links to dotfiles
 ln -s ~/.dotfiles/.vimrc ~/.vimrc 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc 
 ln -s ~/.dotfiles/.vim ~/.vim 
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/.atom ~/.atom
 
 # install vundle
 if ! [ -d ~/.vim/bundle/Vundle.vim ]; then
