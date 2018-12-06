@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 commandExists()
 {
@@ -18,7 +18,7 @@ ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 # install vundle
-if ! [ -f ~/.vim/bundle/Vundle.vim ]; then
+if ! [ -d ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 else
 	echo '[INFO] Vundle is already installed.'
