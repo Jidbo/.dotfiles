@@ -28,8 +28,8 @@ fi
 # if atom is installed import configs
 if commandExists atom; then
 	if commandExists apm; then
-		if [ -f ~/.dotfiles/atom/packages.list ]; then
-			apm install --packages-file ~/.dotfiles/atom/packages.list
+		if [ -f ~/.dotfiles/.atom/packages.list ]; then
+			apm install --packages-file ~/.dotfiles/.atom/packages.list
 		else
 			echo '[INFO] Cannot find packages.txt skipping atom package installation.'
 		fi
