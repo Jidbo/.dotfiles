@@ -29,6 +29,9 @@ Plugin 'vim-syntastic/syntastic'
 " pep8 checking
 Plugin 'nvie/vim-flake8'
 
+" jedi-vim
+Plugin 'davidhalter/jedi-vim'
+
 " winresizer
 Plugin 'simeji/winresizer'
 
@@ -80,6 +83,7 @@ set visualbell
 set virtualedit=block
 set scrolloff=1
 set wildmenu
+set term=screen-256color
 
 " tabs and line wrap
 set tabstop=4
@@ -131,6 +135,11 @@ map <leader>n :NERDTreeToggle<CR>
 
 " ctrl-p setup
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn))?(venv)?$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " see docstrings for folded code
 let g:SimpylFold_docstring_preview=1
