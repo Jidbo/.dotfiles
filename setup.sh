@@ -4,11 +4,13 @@
 rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -rf ~/.vim
+rm -f ~/.tmux.conf
 
 # create symbolic links to dotfiles
 ln -s ~/.dotfiles/.vimrc ~/.vimrc 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc 
 ln -s ~/.dotfiles/.vim ~/.vim 
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
