@@ -36,12 +36,21 @@ else
 	echo '[INFO] Vim is not installed, could not install the plugins.'
 fi
 
-# if atom is installed import configs
+# if atom is installed install packages
 if commandExists atom; then
 	if commandExists apm; then
 		if [ -f ~/.dotfiles/.atom/packages.list ]; then
-			echo '[INFO] Installing atom packages, this can take a while...'
-			apm install --packages-file ~/.dotfiles/.atom/packages.list
+			read -p "Do you want to install your atom packages? (y/n) " answer
+			case ${answer:0:1} in
+			    y|Y )
+					echo '[INFO] Installing atom packages, this can take a while...'
+					apm install --packages-file ~/.dotfiles/.atom/packages.list
+			    ;;
+				* )
+			        echo '[INFO] Skipping atom package installation'
+				;;
+			esac
+
 		else
 			echo '[INFO] Cannot find packages.list skipping atom package installation.'
 		fi
