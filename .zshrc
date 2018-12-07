@@ -63,6 +63,9 @@ plugins=(
 	docker
 	command-not-found
 	screen
+	dirhistory
+	gradle
+	per-directory-history
 )
 
 source $ZSH/oh-my-zsh.sh
