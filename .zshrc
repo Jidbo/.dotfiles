@@ -103,3 +103,9 @@ if [ -f ~/.dotfiles/.localcommands ]
 then
 	source ~/.dotfiles/.localcommands
 fi
+# Tmuxinator autocomplete
+if [ -f ~/.bin/tmuxinator.zsh ]; then
+   source ~/.bin/tmuxinator.zsh
+fi
+   
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
