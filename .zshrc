@@ -98,10 +98,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set vim as default editor
+export EDITOR='vim'
+
+# Custom aliases
 alias ll='ls -l'
 alias vi='vim'
 alias la='ls -la'
-if [ -f ~/.dotfiles/.localcommands ]
-then
+
+if [ -f ~/.dotfiles/.localcommands ]; then
 	source ~/.dotfiles/.localcommands
 fi
+
+# Tmuxinator autocomplete
+if [ -f ~/.bin/tmuxinator.zsh ]; then
+	source ~/.bin/tmuxinator.zsh
+fi
+
