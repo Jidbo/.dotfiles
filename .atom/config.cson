@@ -1,8 +1,4 @@
 "*":
-  "activate-power-mode":
-    plugins:
-      playAudio: true
-      screenShake: true
   "ansible-vault":
     path: "/usr/bin/ansible-vault"
   "atom-material-ui":
@@ -17,6 +13,7 @@
   core:
     disabledPackages: [
       "atom-bootstrap4"
+      "activate-power-mode"
     ]
     telemetryConsent: "no"
     themes: [
@@ -25,10 +22,9 @@
     ]
   editor:
     fontSize: 15
+    softTabs: false
     tabLength: 4
     tabType: "hard"
-  "exception-reporting":
-    userId: "164cfdfa-2140-4a5b-a2bd-e1d34eaa5c00"
   minimap:
     plugins:
       "find-and-replace": true
