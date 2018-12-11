@@ -2,16 +2,23 @@
 
 commandExists()
 {
-	  command -v "$1" >/dev/null 2>&1
+	command -v "$1" >/dev/null 2>&1
 }
 
+backupFilesIfExists()
+{
+	if [ -f $1 ] || [ -h $1 ] || [ -d $1 ]; then
+		printf "Found $1. Backing up to $1.pre-dotfiles\n";
+		mv $1 $1.pre-dotfiles;
+	fi
+}
 # remove all current dotfiles
 echo '[INFO] Removing current dotfiles...'
-rm -f ~/.zshrc
-rm -f ~/.vimrc
-rm -rf ~/.vim
-rm -f ~/.tmux.conf
-rm -rf ~/.atom
+backupFilesIfExists ~/.zshrc
+backupFilesIfExists ~/.vimrc
+backupFilesIfExists ~/.vim
+backupFilesIfExists ~/.tmux.conf
+backupFilesIfExists ~/.atom
 
 # create symbolic links to dotfiles
 echo '[INFO] Creating symlinks to new config files in .dotfiles...'
