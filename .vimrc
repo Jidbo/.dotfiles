@@ -1,9 +1,3 @@
-" if empty(glob("~/.vim/bundle/Vundle.vim"))
-	" silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	" autocmd GUIEnter * PluginInstall
-			" \ source ~/.vimrc
-" endif
-
 set nocompatible              " required
 filetype off                  " required
 
@@ -16,6 +10,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
+
+" tmux navigator
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Simply Fold
 Plugin 'tmhedberg/SimpylFold'
