@@ -97,6 +97,11 @@ set incsearch
 set hlsearch
 set smartcase
 
+" Disable Backup and Swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
 " setup split
 set splitbelow
 set splitright
@@ -128,7 +133,7 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " PLUGIN SETTINGS
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 
 " ctrl-p setup
 let g:ctrlp_working_path_mode = 'ra'
