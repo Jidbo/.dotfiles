@@ -11,6 +11,10 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
+" USEFUL
+" comment plugin
+Plugin 'tpope/vim-commentary'
+
 " WINDOW MANAGEMENT
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
