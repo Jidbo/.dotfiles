@@ -14,6 +14,9 @@ Plugin 'gmarik/Vundle.vim'
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
+" vim gitgutter
+Plugin 'airblade/vim-gitgutter'
+
 " syntax highlighting
 Plugin 'vim-syntastic/syntastic'
 
@@ -121,3 +124,15 @@ map <leader>e :NERDTreeToggle<CR>
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" gitgutter setup
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+nmap ]g :GitGutterNextHunk<CR>
+nmap [g :GitGutterPrevHunk<CR>
+augroup VimDiff
+	autocmd!
+	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
+augroup END
