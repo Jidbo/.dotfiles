@@ -97,8 +97,8 @@ nnoremap <leader>h <C-W><C-H>
 
 " tabs
 nnoremap <leader>t :tabnew<CR> 
-nnoremap <leader>u gT
-nnoremap <leader>i gt
+nnoremap <C-n> gT
+nnoremap <C-p> gt
 
 " Enable folding
 set foldmethod=indent
