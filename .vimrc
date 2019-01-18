@@ -14,17 +14,8 @@ Plugin 'gmarik/Vundle.vim'
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
-" Simply Fold
-Plugin 'tmhedberg/SimpylFold'
-
-" autodindent python
-Plugin 'vim-scripts/indentpython.vim'
-
 " syntax highlighting
 Plugin 'vim-syntastic/syntastic'
-
-" pep8 checking
-Plugin 'nvie/vim-flake8'
 
 " jedi-vim
 Plugin 'davidhalter/jedi-vim'
@@ -32,23 +23,14 @@ Plugin 'davidhalter/jedi-vim'
 " winresizer
 Plugin 'simeji/winresizer'
 
-" search for files
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " color schemes
 Plugin 'flazz/vim-colorschemes'
 
 " nert-tree
 Plugin 'scrooloose/nerdtree'
 
-" nerd-commenter
-Plugin 'scrooloose/nerdcommenter'
-
 " git
 Plugin 'tpope/vim-fugitive'
-
-" surround blocks
-Plugin 'tpope/vim-surround'
 
 " latex
 Plugin 'lervag/vimtex'
@@ -136,20 +118,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <leader>e :NERDTreeToggle<CR>
 
-" ctrl-p setup
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn))?(venv)?$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
-" see docstrings for folded code
-let g:SimpylFold_docstring_preview=1
-
 " airline tabs
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-" nerd-commenter setup
-let g:NERDSpaceDelims = 1
