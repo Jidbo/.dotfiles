@@ -61,6 +61,7 @@ plugins=(
 	git
 	pip
 	screen
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh

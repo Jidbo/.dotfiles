@@ -14,9 +14,6 @@ Plugin 'gmarik/Vundle.vim'
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
-" vim gitgutter
-Plugin 'airblade/vim-gitgutter'
-
 " syntax highlighting
 Plugin 'vim-syntastic/syntastic'
 
@@ -26,17 +23,23 @@ Plugin 'davidhalter/jedi-vim'
 " winresizer
 Plugin 'simeji/winresizer'
 
-" color schemes
-Plugin 'flazz/vim-colorschemes'
-
 " nert-tree
 Plugin 'scrooloose/nerdtree'
+
+" fzf plugin
+Plugin 'junegunn/fzf.vim'
 
 " git
 Plugin 'tpope/vim-fugitive'
 
+" vim gitgutter
+Plugin 'airblade/vim-gitgutter'
+
 " latex
 Plugin 'lervag/vimtex'
+
+" color schemes
+Plugin 'flazz/vim-colorschemes'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
@@ -108,7 +111,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " remap code folding
-nnoremap <leader>f za
+nnoremap <leader>g za
 
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
@@ -136,3 +139,10 @@ augroup VimDiff
 	autocmd!
 	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
 augroup END
+
+" fzf setup
+nmap <C-z> :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>r :Tags<CR>
+let g:fzf_buffers_jump = 1
+
