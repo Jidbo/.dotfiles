@@ -11,39 +11,41 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
+" WINDOW MANAGEMENT
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
-
-" syntax highlighting
-Plugin 'vim-syntastic/syntastic'
-
-" jedi-vim
-Plugin 'davidhalter/jedi-vim'
 
 " winresizer
 Plugin 'simeji/winresizer'
 
+" FILE MANAGEMENT
 " nert-tree
 Plugin 'scrooloose/nerdtree'
 
 " fzf plugin
 Plugin 'junegunn/fzf.vim'
 
+" GIT STUFF
 " git
 Plugin 'tpope/vim-fugitive'
 
 " vim gitgutter
 Plugin 'airblade/vim-gitgutter'
 
-" latex
-Plugin 'lervag/vimtex'
-
+" COLORS
 " color schemes
 Plugin 'flazz/vim-colorschemes'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" LANGUAGE SUPPORT
+" vim ale for interaction with language servers
+Plugin 'w0rp/ale'
+
+" latex
+Plugin 'lervag/vimtex'
 
 " promela syntax highlighting
 Plugin 'vim-scripts/promela.vim'
@@ -102,7 +104,7 @@ nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 
 " tabs
-nnoremap <leader>t :tabnew<CR> 
+nnoremap <leader>t :tabnew<CR>
 nnoremap <C-n> gT
 nnoremap <C-p> gt
 
@@ -143,6 +145,17 @@ augroup END
 " fzf setup
 nmap <C-z> :Buffers<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader>r :Tags<CR>
 let g:fzf_buffers_jump = 1
 
+" git ale setup
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fixers = {
+\	'*': ['trim_whitespace'],
+\	'python': ['autopep8']
+\ }
+nmap <Leader>d :ALEGoToDefinition<CR>
+nmap <Leader>r :ALEFindReferences<CR>
+nmap <Leader>b :ALEFix<CR>
+nnoremap <space>l :lnext<CR>
+nnoremap <space>p :lprevious<CR>
