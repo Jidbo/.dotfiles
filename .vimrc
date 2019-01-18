@@ -44,6 +44,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " vim ale for interaction with language servers
 Plugin 'w0rp/ale'
 
+" language packs
+Plugin 'sheerun/vim-polyglot'
+
 " latex
 Plugin 'lervag/vimtex'
 
