@@ -28,6 +28,7 @@ export EDITOR='vim'
 alias ll='ls -l'
 alias vi='vim'
 alias la='ls -la'
+alias :q='exit'
 
 # localcommands
 if [ -f ~/.dotfiles/.localcommands ]
@@ -46,5 +47,5 @@ if _has fzf && _has ag; then
 fi
 
 export FZF_ALT_C_COMMAND='find . -type d'
-   
+
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
