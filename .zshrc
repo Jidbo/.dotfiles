@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -103,9 +103,6 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Set vim as default editor
-export EDITOR='vim'
-
 # Custom aliases
 alias ll='ls -l'
 alias vi='vim'
@@ -114,16 +111,15 @@ alias la='ls -la'
 if [ -f ~/.dotfiles/.localcommands ]; then
 	source ~/.dotfiles/.localcommands
 fi
-# Tmuxinator autocomplete
-if [ -f ~/.bin/tmuxinator.zsh ]; then
-   source ~/.bin/tmuxinator.zsh
-fi
-   
-export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
+# Antigen
+#if [ -f ~/.dotfiles/antigen.zsh ]; then
+#	source ~/.dotfiles/antigen.zsh
+#fi
 
 # Tmuxinator autocomplete
 if [ -f ~/.bin/tmuxinator.zsh ]; then
-	source ~/.bin/tmuxinator.zsh
+   source ~/.bin/tmuxinator.zsh
 fi
 
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"

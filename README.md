@@ -18,6 +18,6 @@ The install script will try to find that file and automatically install all pack
 
 You can export the package list with:
 ```
-apm list --installed --bare > ~/.dotfiles/atom/packages.list
+apm list --installed --bare > ~/.dotfiles/.atom/packages.list
 ```
 

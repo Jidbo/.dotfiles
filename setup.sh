@@ -12,11 +12,13 @@ backupFilesIfExists()
 		mv $1 $1.pre-dotfiles;
 	fi
 }
+
 # remove all current dotfiles
 echo '[INFO] Removing current dotfiles...'
 backupFilesIfExists ~/.zshrc
 backupFilesIfExists ~/.vimrc
 backupFilesIfExists ~/.vim
+backupFilesIfExists ~/.inputrc
 backupFilesIfExists ~/.tmux.conf
 backupFilesIfExists ~/.atom
 
@@ -24,7 +26,8 @@ backupFilesIfExists ~/.atom
 echo '[INFO] Creating symlinks to new config files in .dotfiles...'
 ln -s ~/.dotfiles/.vimrc ~/.vimrc 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc 
-ln -s ~/.dotfiles/.vim ~/.vim 
+ln -s ~/.dotfiles/.vim ~/.vim
+ln -s ~/.dotfiles/.inputrc ~/.inputrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.atom ~/.atom
 
@@ -69,5 +72,5 @@ else
 	echo '[INFO] Skipping atom configuration because it seems like you did not install atom yet!'
 fi
 
-# next steps:
-# - backup config files first before removing them
+echo 'Finished setup...'
+echo 'You should restart your terminal to see the changes.'
