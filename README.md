@@ -15,11 +15,12 @@ Make sure you have these packages installed:
 - the_silver_surfer
 - powerline-fonts
 - fzf
+
 If you want to install and apply all of the settings you just need to run:
 ```
 cd ~
 git clone https://github.com/saibotk/.dotfiles
-./setup.sh
+.dotfiles/setup.sh
 ```
 
 ## Atom packages
