@@ -43,7 +43,8 @@ fi
 # fzf + ag configuration
 if _has fzf && _has ag; then
 	export FZF_CTRL_T_COMMAND='ag --hidden --nocolor --ignore .git -g ""'
-	export FZF_ALT_C_COMMAND='find . -type d'
 fi
+
+export FZF_ALT_C_COMMAND='find . -type d'
    
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
