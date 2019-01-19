@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -66,6 +66,7 @@ plugins=(
 	dirhistory
 	gradle
 	per-directory-history
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,6 +91,9 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Set vim as default editor
+export EDITOR='vim'
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -110,6 +114,12 @@ alias la='ls -la'
 if [ -f ~/.dotfiles/.localcommands ]; then
 	source ~/.dotfiles/.localcommands
 fi
+# Tmuxinator autocomplete
+if [ -f ~/.bin/tmuxinator.zsh ]; then
+   source ~/.bin/tmuxinator.zsh
+fi
+   
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 # Tmuxinator autocomplete
 if [ -f ~/.bin/tmuxinator.zsh ]; then

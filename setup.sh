@@ -28,6 +28,7 @@ ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.atom ~/.atom
 
+
 # install vundle
 if ! [ -d ~/.vim/bundle/Vundle.vim ]; then
 	echo '[INFO] Installing Vundle...'

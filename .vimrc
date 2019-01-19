@@ -1,9 +1,3 @@
-" if empty(glob("~/.vim/bundle/Vundle.vim"))
-	" silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	" autocmd GUIEnter * PluginInstall
-			" \ source ~/.vimrc
-" endif
-
 set nocompatible              " required
 filetype off                  " required
 
@@ -17,48 +11,51 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
-" Simply Fold
-Plugin 'tmhedberg/SimpylFold'
+" USEFUL
+" comment plugin
+Plugin 'tpope/vim-commentary'
 
-" autodindent python
-Plugin 'vim-scripts/indentpython.vim'
+" close xml/html tags
+Plugin 'docunext/closetag.vim'
 
-" syntax highlighting
-Plugin 'vim-syntastic/syntastic'
-
-" pep8 checking
-Plugin 'nvie/vim-flake8'
-
-" jedi-vim
-Plugin 'davidhalter/jedi-vim'
+" WINDOW MANAGEMENT
+" tmux navigator
+Plugin 'christoomey/vim-tmux-navigator'
 
 " winresizer
 Plugin 'simeji/winresizer'
 
-" search for files
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" color schemes
-Plugin 'flazz/vim-colorschemes'
-
+" FILE MANAGEMENT
 " nert-tree
 Plugin 'scrooloose/nerdtree'
 
-" nerd-commenter
-Plugin 'scrooloose/nerdcommenter'
+" fzf plugin
+Plugin 'junegunn/fzf.vim'
 
+" GIT STUFF
 " git
 Plugin 'tpope/vim-fugitive'
 
-" surround blocks
-Plugin 'tpope/vim-surround'
+" vim gitgutter
+Plugin 'airblade/vim-gitgutter'
 
-" latex
-Plugin 'lervag/vimtex'
+" COLORS
+" color schemes
+Plugin 'flazz/vim-colorschemes'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" LANGUAGE SUPPORT
+" vim ale for interaction with language servers
+Plugin 'w0rp/ale'
+
+" language packs
+Plugin 'sheerun/vim-polyglot'
+
+" latex
+Plugin 'lervag/vimtex'
 
 " promela syntax highlighting
 Plugin 'vim-scripts/promela.vim'
@@ -70,8 +67,6 @@ filetype plugin indent on    " required
 " syntax
 syntax on
 colorscheme Benokai
-let g:airline_theme='luna'
-let python_highlight_all=1
 let mapleader=" "
 
 " random settings
@@ -84,6 +79,7 @@ set virtualedit=block
 set scrolloff=1
 set wildmenu
 set term=screen-256color
+set autoread
 
 " tabs and line wrap
 set tabstop=4
@@ -100,6 +96,11 @@ set incsearch
 set hlsearch
 set smartcase
 
+" Disable Backup and Swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
 " setup split
 set splitbelow
 set splitright
@@ -111,16 +112,16 @@ nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 
 " tabs
-nnoremap <leader>t :tabnew<CR> 
-nnoremap <leader>u gT
-nnoremap <leader>i gt
+nnoremap <leader>t :tabnew<CR>
+nnoremap <C-n> gT
+nnoremap <C-p> gt
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 
 " remap code folding
-nnoremap <leader>f za
+nnoremap <leader>g za
 
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
@@ -131,22 +132,41 @@ au BufNewFile,BufRead *.js, *.html, *.css
 " PLUGIN SETTINGS
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 
-" ctrl-p setup
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn))?(venv)?$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
-" see docstrings for folded code
-let g:SimpylFold_docstring_preview=1
-
-" airline tabs
+" airline setup
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
 
-" nerd-commenter setup
-let g:NERDSpaceDelims = 1
+" gitgutter setup
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+nmap ]g :GitGutterNextHunk<CR>
+nmap [g :GitGutterPrevHunk<CR>
+augroup VimDiff
+	autocmd!
+	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
+augroup END
+
+" fzf setup
+nmap <C-z> :Buffers<CR>
+nmap <Leader>f :Files<CR>
+let g:fzf_buffers_jump = 1
+
+" vim-ale setup
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fixers = {
+\	'*': ['trim_whitespace'],
+\	'python': ['autopep8']
+\ }
+nmap <Leader>d :ALEGoToDefinition<CR>
+nmap <Leader>r :ALEFindReferences<CR>
+nmap <Leader>b :ALEFix<CR>
+nnoremap <space>l :lnext<CR>
+nnoremap <space>p :lprevious<CR>
