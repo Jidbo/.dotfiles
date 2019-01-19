@@ -64,8 +64,6 @@ filetype plugin indent on    " required
 " syntax
 syntax on
 colorscheme Benokai
-let g:airline_theme='luna'
-let python_highlight_all=1
 let mapleader=" "
 
 " random settings
@@ -133,9 +131,12 @@ au BufNewFile,BufRead *.js, *.html, *.css
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <leader>e :NERDTreeToggle<CR>
 
-" airline tabs
+" airline setup
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
 
 " gitgutter setup
 let g:gitgutter_sign_added = '∙'
@@ -154,7 +155,7 @@ nmap <C-z> :Buffers<CR>
 nmap <Leader>f :Files<CR>
 let g:fzf_buffers_jump = 1
 
-" git ale setup
+" vim-ale setup
 let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_fixers = {
