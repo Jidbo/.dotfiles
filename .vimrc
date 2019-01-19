@@ -15,6 +15,9 @@ Plugin 'gmarik/Vundle.vim'
 " comment plugin
 Plugin 'tpope/vim-commentary'
 
+" close xml/html tags
+Plugin 'docunext/closetag.vim'
+
 " WINDOW MANAGEMENT
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
