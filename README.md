@@ -5,6 +5,16 @@ It also contains an installation script "setup.sh" to easily apply all of the se
 Vundle.
 
 ## Usage
+Make sure you have these packages installed:
+- atom
+- vim
+- zsh
+- oh-my-zsh
+- tmux
+- tmuxinator
+- the_silver_surfer
+- powerline-fonts
+- fzf
 If you want to install and apply all of the settings you just need to run:
 ```
 cd ~
