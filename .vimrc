@@ -123,6 +123,12 @@ set foldlevel=99
 " remap code folding
 nnoremap <leader>g za
 
+" disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
 	\ set tabstop=4 |
