@@ -128,6 +128,10 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " html css js indents
 au BufNewFile,BufRead *.js, *.html, *.css
