@@ -7,7 +7,12 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
 	pip
+	docker
+	command-not-found
 	screen
+	dirhistory
+	gradle
+	per-directory-history
 	fzf
 )
 
@@ -30,9 +35,7 @@ alias vi='vim'
 alias la='ls -la'
 alias :q='exit'
 
-# localcommands
-if [ -f ~/.dotfiles/.localcommands ]
-then
+if [ -f ~/.dotfiles/.localcommands ]; then
 	source ~/.dotfiles/.localcommands
 fi
 

@@ -1,0 +1,7 @@
+# Ignore all files
+*
+
+# Except these
+!config.cson
+!packages.list
+!init.coffee

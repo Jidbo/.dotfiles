@@ -1,0 +1,41 @@
+"*":
+  "ansible-vault":
+    path: "/usr/bin/ansible-vault"
+  "atom-material-ui":
+    colors:
+      genAccent: true
+    tabs:
+      compactTabs: true
+      stretchedTabs: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    disabledPackages: [
+      "atom-bootstrap4"
+      "activate-power-mode"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+  editor:
+    fontSize: 15
+    softTabs: false
+    tabLength: 4
+    tabType: "hard"
+  minimap:
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  welcome:
+    showOnStartup: false
+".blade.html.php.text":
+  editor:
+    commentEnd: " --}}"
+    commentStart: "{{-- "
