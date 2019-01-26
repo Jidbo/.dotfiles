@@ -119,6 +119,11 @@ nnoremap <leader>g za
 
 " toggle hybrid number mode
 nnoremap <leader>h :set rnu!<CR>
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 " disable arrow keys
 noremap <Up> <Nop>
