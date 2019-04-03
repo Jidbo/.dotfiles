@@ -215,12 +215,21 @@ let g:polyglot_disabled = ["latex"]
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <leader>e :NERDTreeToggle<CR>
 
-" airline setup
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" AIRLINE SETUP
+" sections
+let g:airline_section_y = ""
+let g:airline_section_z = "%l/%L:%c"
+let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
+" other stuff
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
+let g:airline_inactive_collapse=1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#keymap#enabled = 0
+set ttimeoutlen=50
 
 " gitgutter setup
 let g:gitgutter_sign_added = '∙'
