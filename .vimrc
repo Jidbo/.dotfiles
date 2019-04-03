@@ -57,9 +57,6 @@ Plugin 'sheerun/vim-polyglot'
 " latex
 Plugin 'lervag/vimtex'
 
-" promela syntax highlighting
-Plugin 'vim-scripts/promela.vim'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -254,3 +251,4 @@ nmap <Leader>r :ALEFindReferences<CR>
 nmap <Leader>b :ALEFix<CR>
 nnoremap <space>l :lnext<CR>
 nnoremap <space>p :lprevious<CR>
+
