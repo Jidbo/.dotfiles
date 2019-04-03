@@ -115,6 +115,9 @@ set foldlevel=99
 " remap code folding
 nnoremap <leader>g za
 
+" auto reload .vimrc on write
+autocmd BufWritePost .vimrc source %
+
 " toggle hybrid number mode
 nnoremap <leader>h :set rnu!<CR>
 :augroup numbertoggle
