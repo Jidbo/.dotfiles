@@ -18,6 +18,9 @@ Plugin 'tpope/vim-commentary'
 " close xml/html tags
 Plugin 'docunext/closetag.vim'
 
+" brackets management
+Plugin 'machakann/vim-sandwich'
+
 " WINDOW MANAGEMENT
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
