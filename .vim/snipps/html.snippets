@@ -1,0 +1,22 @@
+extends css
+snippet div "Div container"
+<div class="$1">
+	$0
+</div>
+endsnippet
+
+snippet tag "generic Element"
+<${1:tag}${2: class="$3"}>
+	$0
+</$1>
+endsnippet
+
+snippet tagi "generic inline Element"
+<${1:tag}${2: class="$3"}>$4</$1>$0
+endsnippet
+
+snippet lin "link element"
+<a href="$1"${2: class="$3"}>
+	$0
+</a>
+endsnippet

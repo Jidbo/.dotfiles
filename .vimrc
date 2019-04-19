@@ -21,6 +21,9 @@ Plugin 'docunext/closetag.vim'
 " brackets management
 Plugin 'machakann/vim-sandwich'
 
+" snippets
+Plugin 'SirVer/ultisnips'
+
 " WINDOW MANAGEMENT
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
@@ -242,8 +245,6 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
-nmap ]g :GitGutterNextHunk<CR>
-nmap [g :GitGutterPrevHunk<CR>
 augroup VimDiff
 	autocmd!
 	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
@@ -267,3 +268,13 @@ nmap <Leader>b :ALEFix<CR>
 nnoremap <space>l :lnext<CR>
 nnoremap <space>p :lprevious<CR>
 
+" UltiSnip setup
+
+" Trigger configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]

@@ -1,0 +1,21 @@
+extends php, html
+snippet var "Display Variable"
+{{ $1 }} $0
+endsnippet
+
+snippet each "For Each Loop"
+@foreach ($1 as $2)
+	$0
+@endforeach
+endsnippet
+
+snippet sec "Section"
+@section('$1')
+$0
+@endsection
+endsnippet
+
+snippet ext "extends statement"
+@extends('$1')
+$0
+endsnippet
