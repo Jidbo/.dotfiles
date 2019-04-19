@@ -15,9 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 " comment plugin
 Plugin 'tpope/vim-commentary'
 
-" close xml/html tags
-Plugin 'docunext/closetag.vim'
-
 " brackets management
 Plugin 'machakann/vim-sandwich'
 
