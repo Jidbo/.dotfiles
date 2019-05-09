@@ -81,6 +81,7 @@ set wildmenu
 set term=screen-256color
 set autoread
 set lazyredraw
+set history=250
 
 " tabs and line wrap
 set tabstop=4
@@ -120,6 +121,10 @@ nnoremap <leader>g za
 
 " auto reload .vimrc on write
 autocmd BufWritePost .vimrc source %
+
+" ex command 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 " toggle hybrid number mode
 nnoremap <leader>h :set rnu!<CR>
@@ -270,7 +275,7 @@ nnoremap <space>p :lprevious<CR>
 " Trigger configuration
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpBackwardTrigger="<C-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
