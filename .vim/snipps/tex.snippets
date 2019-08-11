@@ -38,6 +38,14 @@ snippet sum "Sum character"
 \sum_\{${1:lower}\}^\{${2:upper}\} $0
 endsnippet
 
+snippet int "integral character"
+\int_\{${1:lower}\}^\{${2:upper}\} $0
+endsnippet
+
+snippet dx "dx sign" i
+\mathrm{d}x$0
+endsnippet
+
 snippet ^ "Superscript" i
 ^{$1}$0
 endsnippet
@@ -60,6 +68,12 @@ snippet beg "Begin"
 \end{$1}
 endsnippet
 
+snippet ali "align"
+\begin{align*}
+	$0
+\end{align*}
+endsnippet
+
 snippet sec "Section"
 \section{$1}
 $0
@@ -70,8 +84,12 @@ snippet secs "Subsection"
 $0
 endsnippet
 
-snippet fat "Emphasize Text"
+snippet emp "Emphasize Text"
 \emph{$1}$0
+endsnippet
+
+snippet fat "Fat Print Text"
+\textbf{$1}$0
 endsnippet
 
 snippet secss "Subsubsection"
@@ -98,4 +116,22 @@ snippet doc "Basic Document"
 $0
 
 \end{document}
+endsnippet
+
+# Sqeuenzkalküle
+
+snippet axi "Axiome"
+\AxiomC{\$ $1 \$}$0
+endsnippet
+
+snippet rla "Right Label"
+\RightLabel{\$ $1 \$}$0
+endsnippet
+
+snippet uin "Unary Inf"
+\UnaryInfC{\$ $1 \$}$0
+endsnippet
+
+snippet bin "Binary Inf"
+\BinaryInfC{\$ $1 \$}$0
 endsnippet
