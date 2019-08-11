@@ -54,6 +54,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " vim ale for interaction with language servers
 Plugin 'w0rp/ale'
 
+" editorconfig plugin
+Plugin 'editorconfig/editorconfig-vim'
+
 " language packs
 Plugin 'sheerun/vim-polyglot'
 
@@ -139,12 +142,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-" html css js indents
-au BufNewFile,BufRead *.js, *.html, *.css
-	\ set tabstop=4 |
-	\ set softtabstop=4 |
-	\ set shiftwidth=4
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
 " Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
@@ -253,7 +250,7 @@ augroup VimDiff
 augroup END
 
 " fzf setup
-nmap <C-z> :Buffers<CR>
+nmap <C-y> :Buffers<CR>
 nmap <Leader>f :Files<CR>
 let g:fzf_buffers_jump = 1
 
