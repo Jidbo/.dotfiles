@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -142,6 +142,14 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" auto expand brackets
+inoremap (; (<CR>)<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>}<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>]<C-c>O
+inoremap [, [<CR>],<C-c>O
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
 " Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
