@@ -115,6 +115,9 @@ nnoremap <leader>t :tabnew<CR>
 nnoremap <C-n> gT
 nnoremap <C-p> gt
 
+" search for visual selection
+vnoremap // y/<C-R>"<CR>
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -259,7 +262,7 @@ augroup END
 
 " fzf setup
 nmap <C-y> :Buffers<CR>
-nmap <Leader>f :Files<CR>
+nmap <Leader>f :GFiles<CR>
 let g:fzf_buffers_jump = 1
 
 " vim-ale setup
