@@ -9,6 +9,7 @@ plugins=(
 	pip
 	screen
 	fzf
+	artisan
 )
 
 source $ZSH/oh-my-zsh.sh
