@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " used Bundle instead of Plugin)
 
 " USEFUL
+
 " comment plugin
 Plugin 'tpope/vim-commentary'
 
@@ -54,7 +55,6 @@ Plugin 'norcalli/nvim-colorizer.lua'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 
 " LANGUAGE SUPPORT
 " vim-coc
@@ -62,9 +62,6 @@ Plugin 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 
 " nvim-remote
 Plugin 'mhinz/neovim-remote'
-
-" editorconfig plugin
-Plugin 'editorconfig/editorconfig-vim'
 
 " language packs
 Plugin 'sheerun/vim-polyglot'
@@ -250,7 +247,6 @@ let g:airline_section_z = "%l/%L:%c"
 let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
 " other stuff
 let g:airline_theme='luna'
-let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=1
 let g:airline_skip_empty_sections = 1
@@ -273,19 +269,6 @@ augroup END
 nmap <C-y> :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
 let g:fzf_buffers_jump = 1
-
-" vim-ale setup
-let g:ale_completion_enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_fixers = {
-\	'*': ['trim_whitespace'],
-\	'python': ['autopep8']
-\ }
-nmap <Leader>d :ALEGoToDefinition<CR>
-nmap <Leader>r :ALEFindReferences<CR>
-nmap <Leader>b :ALEFix<CR>
-nnoremap <space>l :lnext<CR>
-nnoremap <space>p :lprevious<CR>
 
 " vimtex setup
 let g:vimtex_compile_progname = 'nvr'
