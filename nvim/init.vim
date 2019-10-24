@@ -16,8 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 " USEFUL
 " comment plugin
 Plugin 'tpope/vim-commentary'
-" Color higlighting
-Plugin 'norcalli/nvim-colorizer.lua'
 
 " brackets management
 Plugin 'machakann/vim-sandwich'
@@ -26,6 +24,7 @@ Plugin 'machakann/vim-sandwich'
 Plugin 'SirVer/ultisnips'
 
 " WINDOW MANAGEMENT
+
 " tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -47,8 +46,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " COLORS
-" color schemes
-Plugin 'flazz/vim-colorschemes'
+" Plastic colorscheme
+Plugin 'aonemd/kuroi.vim'
+
+" Color higlighting
+Plugin 'norcalli/nvim-colorizer.lua'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
@@ -76,10 +78,13 @@ filetype plugin indent on    " required
 
 " nvim setup
 " syntax
-set termguicolors
 syntax on
-colorscheme Benokai
 let mapleader=" "
+
+" color settings
+set termguicolors
+colorscheme kuroi
+set background=dark
 
 " random settings
 set number
@@ -123,15 +128,10 @@ set splitright
 
 " tabs
 nnoremap <leader>t :tabnew<CR>
-nnoremap <C-n> gT
-nnoremap <C-p> gt
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-
-" remap code folding
-nnoremap <leader>g za
 
 " auto reload .vimrc on write
 autocmd BufWritePost init.vim source %
@@ -236,6 +236,7 @@ command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-ar
 nnoremap <silent> <Leader>bd :Bclose<CR>
 
 " PLUGIN SETTINGS
+
 " polyglot setup
 let g:polyglot_disabled = ["latex"]
 " nerd tree setup
@@ -248,7 +249,7 @@ let g:airline_section_y = ""
 let g:airline_section_z = "%l/%L:%c"
 let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
 " other stuff
-let g:airline_theme='solarized'
+let g:airline_theme='luna'
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=1
