@@ -57,8 +57,15 @@ Plugin 'norcalli/nvim-colorizer.lua'
 Plugin 'vim-airline/vim-airline'
 
 " LANGUAGE SUPPORT
-" vim-coc
-Plugin 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+" autocompletion
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" autocompletion for python
+Plugin 'deoplete-plugins/deoplete-jedi'
+" completion from tmux panes
+Bundle 'wellle/tmux-complete.vim'
+
+" Linting
+Plugin 'dense-analysis/ale'
 
 " nvim-remote
 Plugin 'mhinz/neovim-remote'
@@ -286,5 +293,22 @@ let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]
 " colors.lua setup
 lua require'colorizer'.setup()
 
-" coc vim setup
+" deoplete setup
+let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python'
+
+" vim-ale setup
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_fixers = {
+\	'*': ['trim_whitespace'],
+\	'python': ['autopep8']
+\ }
+nmap <Leader>d :ALEGoToDefinition<CR>
+nmap <Leader>r :ALEFindReferences<CR>
+nmap <Leader>b :ALEFix<CR>
+nnoremap <space>l :lnext<CR>
+nnoremap <space>p :lprevious<CR>
+
+" tmux setup
+let g:tmuxcomplete#trigger = ''
