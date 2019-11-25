@@ -1,84 +1,61 @@
-set nocompatible              " required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-let s:editor_root=expand("~/.config/nvim")
-call vundle#rc(s:editor_root . '/bundle')
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-
+call plug#begin('~/.config/nvim/bundle')
 " USEFUL
 
 " comment plugin
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " brackets management
-Plugin 'machakann/vim-sandwich'
+Plug 'machakann/vim-sandwich'
 
 " snippets
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " WINDOW MANAGEMENT
 
 " tmux navigator
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " winresizer
-Plugin 'simeji/winresizer'
+Plug 'simeji/winresizer'
 
 " FILE MANAGEMENT
 " nert-tree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " fzf plugin
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 " GIT STUFF
 " git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " vim gitgutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " COLORS
 " Plastic colorscheme
-Plugin 'aonemd/kuroi.vim'
+Plug 'aonemd/kuroi.vim'
 
 " Color higlighting
-Plugin 'norcalli/nvim-colorizer.lua'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " powerline
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
-" LANGUAGE SUPPORT
-" autocompletion
-Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" autocompletion for python
-Plugin 'deoplete-plugins/deoplete-jedi'
-" completion from tmux panes
-Bundle 'wellle/tmux-complete.vim'
-
-" Linting
-Plugin 'dense-analysis/ale'
+" Coc Nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " nvim-remote
-Plugin 'mhinz/neovim-remote'
+Plug 'mhinz/neovim-remote'
 
 " language packs
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " latex
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 " nvim setup
 " syntax
