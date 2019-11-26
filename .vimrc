@@ -43,8 +43,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " COLORS
-" color schemes
-Plugin 'flazz/vim-colorschemes'
+" Plastic colorscheme
+Plugin 'aonemd/kuroi.vim'
 
 " powerline
 Plugin 'vim-airline/vim-airline'
@@ -69,8 +69,10 @@ filetype plugin indent on    " required
 
 " syntax
 syntax on
-colorscheme Benokai
+colorscheme kuroi
+set background=dark
 let mapleader=" "
+hi MatchParen cterm=bold ctermbg=NONE ctermfg=red
 
 " random settings
 set number
@@ -240,7 +242,7 @@ let g:airline_section_y = ""
 let g:airline_section_z = "%l/%L:%c"
 let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
 " other stuff
-let g:airline_theme='solarized'
+let g:airline_theme='luna'
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:airline_inactive_collapse=1
