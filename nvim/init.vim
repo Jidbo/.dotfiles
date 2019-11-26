@@ -7,9 +7,6 @@ Plug 'tpope/vim-commentary'
 " brackets management
 Plug 'machakann/vim-sandwich'
 
-" snippets
-Plug 'SirVer/ultisnips'
-
 " WINDOW MANAGEMENT
 
 " tmux navigator
@@ -257,35 +254,57 @@ let g:fzf_buffers_jump = 1
 " vimtex setup
 let g:vimtex_compile_progname = 'nvr'
 
-" UltiSnip setup
-" Trigger configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-tab>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]
-
 " colors.lua setup
 lua require'colorizer'.setup()
 
-" deoplete setup
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/usr/bin/python'
-
-" vim-ale setup
-let g:ale_completion_enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_fixers = {
-\	'*': ['trim_whitespace'],
-\	'python': ['autopep8']
-\ }
-nmap <Leader>d :ALEGoToDefinition<CR>
-nmap <Leader>r :ALEFindReferences<CR>
-nmap <Leader>b :ALEFix<CR>
-nnoremap <space>l :lnext<CR>
-nnoremap <space>p :lprevious<CR>
-
 " tmux setup
 let g:tmuxcomplete#trigger = ''
+
+" Coc vim setup
+set hidden
+set updatetime=300
+set shortmess+=c
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+" navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" goto remaps
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use `:Form` to format current buffer
+command! -nargs=0 Form :call CocAction('format')
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <leader>x  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
+" Search workspace symbls
+nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
+" Do default action fo next item.
+nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
