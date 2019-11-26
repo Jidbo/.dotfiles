@@ -63,6 +63,7 @@ let mapleader=" "
 set termguicolors
 colorscheme kuroi
 set background=dark
+hi MatchParen guibg=NONE guifg=red gui=bold
 
 " random settings
 set number
