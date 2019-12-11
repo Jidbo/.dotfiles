@@ -8,7 +8,6 @@ if [ -f ~/.dotfiles/shell/plugins ]
 then
 	source ~/.dotfiles/shell/plugins
 else
-    # plugins
     plugins=(
         git
         pip
@@ -55,4 +54,8 @@ fi
 
 export FZF_ALT_C_COMMAND='find . -type d'
 
-export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+if _has ruby;
+then
+    export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+fi
+

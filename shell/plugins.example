@@ -5,4 +5,5 @@ plugins=(
     screen
     artisan
     fzf
+    z
 )
