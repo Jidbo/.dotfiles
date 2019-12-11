@@ -1,70 +1,61 @@
 set nocompatible              " required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
+call plug#begin('~/.vim/bundle')
 
 " USEFUL
 " comment plugin
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " brackets management
-Plugin 'machakann/vim-sandwich'
+Plug 'machakann/vim-sandwich'
 
 " snippets
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " WINDOW MANAGEMENT
 " tmux navigator
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " winresizer
-Plugin 'simeji/winresizer'
+Plug 'simeji/winresizer'
 
 " FILE MANAGEMENT
 " nert-tree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " fzf plugin
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
 " GIT STUFF
 " git
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " vim gitgutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " COLORS
 " Plastic colorscheme
-Plugin 'aonemd/kuroi.vim'
+Plug 'aonemd/kuroi.vim'
 
 " powerline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " LANGUAGE SUPPORT
 " vim ale for interaction with language servers
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 " editorconfig plugin
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " language packs
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " latex
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " syntax
