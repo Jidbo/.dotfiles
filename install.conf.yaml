@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+# clean config and home directory from bad symbolic links
+- clean: ['~', '.config/']
+
+- link:
+    ~/.zshrc:
+      force: true
+      path: shell/zshrc
+    ~/.tmux.conf:
+      path: shell/tmux.conf
+    ~/.vimrc:
+      path: vim/vimrc
+    ~/.vim:
+      path: vim/vim
+    ~/.config/nvim:
+      path: nvim
+    
+- shell:
+  # install ohmyzsh
+  - sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # install vim plug for vim
+  - curl -fLo vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # install vim plug for nvim
+  - curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # install vim plugins
+  - vim +PlugInstall +qall
