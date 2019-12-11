@@ -1,2 +1,3 @@
-.localcommands
-.vim/bundle/*
+localcommands
+vim/bundle/*
+vim/autoload
