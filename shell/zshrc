@@ -4,15 +4,21 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # plugins
-plugins=(
-	git
-	pip
-	screen
-	fzf
-	artisan
-)
+if [ -f ~/.dotfiles/shell/plugins ]
+then
+	source ~/.dotfiles/shell/plugins
+else
+    # plugins
+    plugins=(
+        git
+        pip
+        screen
+        z
+    )
+fi
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -27,14 +33,14 @@ export EDITOR='vim'
 
 # aliases
 alias ll='ls -l'
-alias vi='vim'
 alias la='ls -la'
 alias :q='exit'
+alias fresh="source ~/.zshrc"
 
 # localcommands
-if [ -f ~/.dotfiles/localcommands ]
+if [ -f ~/.dotfiles/shell/localcommands ]
 then
-	source ~/.dotfiles/localcommands
+	source ~/.dotfiles/shell/localcommands
 fi
 
 # Tmuxinator autocomplete
