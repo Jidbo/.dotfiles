@@ -32,9 +32,9 @@ alias la='ls -la'
 alias :q='exit'
 
 # localcommands
-if [ -f ~/.dotfiles/.localcommands ]
+if [ -f ~/.dotfiles/localcommands ]
 then
-	source ~/.dotfiles/.localcommands
+	source ~/.dotfiles/localcommands
 fi
 
 # Tmuxinator autocomplete
