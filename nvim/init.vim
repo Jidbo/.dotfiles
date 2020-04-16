@@ -16,11 +16,14 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'simeji/winresizer'
 
 " FILE MANAGEMENT
-" nert-tree
+" nerd-tree
 Plug 'scrooloose/nerdtree'
 
 " fzf plugin
 Plug 'junegunn/fzf.vim'
+
+" vimwiki
+Plug 'vimwiki/vimwiki'
 
 " GIT STUFF
 " git
@@ -69,7 +72,9 @@ hi MatchParen guibg=NONE guifg=red gui=bold
 set number
 set clipboard=unnamed
 set mouse=nvi
-set smarttab
+" set smarttab
+set expandtab
+set tabstop=4
 set visualbell
 set virtualedit=block
 set scrolloff=1
@@ -119,6 +124,8 @@ autocmd BufWritePost init.vim source %
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+nnoremap H ^
+
 " toggle hybrid number mode
 nnoremap <leader>h :set rnu!<CR>
 :augroup numbertoggle
@@ -150,6 +157,9 @@ let loaded_bclose = 1
 if !exists('bclose_multiple')
   let bclose_multiple = 1
 endif
+
+" make all tabs to spaces
+nnoremap <silent> <leader>i :set expandtab<CR>:retab<CR>
 
 " Display an error message.
 function! s:Warn(msg)
@@ -251,6 +261,9 @@ augroup END
 nmap <C-y> :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
 let g:fzf_buffers_jump = 1
+
+" Vimwiki setup
+let g:vimwiki_list = [{'path': '~/.wiki/'}]
 
 " vimtex setup
 let g:vimtex_compile_progname = 'nvr'
