@@ -8,7 +8,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-commentary'
 
 " brackets management
-Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 
 " snippets
 Plug 'SirVer/ultisnips'

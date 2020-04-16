@@ -5,7 +5,7 @@ call plug#begin('~/.config/nvim/bundle')
 Plug 'tpope/vim-commentary'
 
 " brackets management
-Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 
 " WINDOW MANAGEMENT
 
