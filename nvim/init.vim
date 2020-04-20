@@ -15,6 +15,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " winresizer
 Plug 'simeji/winresizer'
 
+" goyo
+Plug 'junegunn/goyo.vim'
+
 " FILE MANAGEMENT
 " nerd-tree
 Plug 'scrooloose/nerdtree'
@@ -82,6 +85,7 @@ set wildmenu
 set autoread
 set lazyredraw
 set history=250
+set noshowmode
 
 " tabs and line wrap
 set tabstop=4
@@ -133,12 +137,6 @@ nnoremap <leader>h :set rnu!<CR>
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-
-" disable arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 " auto expand brackets
 inoremap (; (<CR>)<C-c>O
@@ -273,6 +271,20 @@ lua require'colorizer'.setup()
 
 " tmux setup
 let g:tmuxcomplete#trigger = ''
+
+" GOYO
+function! s:goyo_enter()
+  set noshowcmd
+  set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+  set showcmd
+  set scrolloff=1
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Coc vim setup
 set hidden
