@@ -1,5 +1,7 @@
 call plug#begin('~/.config/nvim/bundle')
 " USEFUL
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
 
 " comment plugin
 Plug 'tpope/vim-commentary'
@@ -44,12 +46,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " powerline
 Plug 'vim-airline/vim-airline'
-
-" Coc Nvim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" nvim-remote
-Plug 'mhinz/neovim-remote'
 
 " language packs
 Plug 'sheerun/vim-polyglot'
@@ -102,8 +98,26 @@ set incsearch
 set hlsearch
 set smartcase
 
+" REMAPS
+
 " search for visual selection
 vnoremap // y/<C-R>"<CR>
+nnoremap H ^
+
+" ex command 
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" auto expand brackets
+inoremap (; (<CR>)<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>}<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>]<C-c>O
+inoremap [, [<CR>],<C-c>O
+
+" toggle hybrid mode
+nnoremap <leader>h :set rnu!<CR>
 
 " Disable Backup and Swap files
 set noswapfile
@@ -114,9 +128,6 @@ set nowritebackup
 set splitbelow
 set splitright
 
-" tabs
-nnoremap <leader>t :tabnew<CR>
-
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -124,27 +135,12 @@ set foldlevel=99
 " auto reload .vimrc on write
 autocmd BufWritePost init.vim source %
 
-" ex command 
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-nnoremap H ^
-
 " toggle hybrid number mode
-nnoremap <leader>h :set rnu!<CR>
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-
-" auto expand brackets
-inoremap (; (<CR>)<C-c>O
-inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>}<C-c>O
-inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>]<C-c>O
-inoremap [, [<CR>],<C-c>O
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
 " Version 2008-11-18 from http://vim.wikia.com/wiki/VimTip165
@@ -155,9 +151,6 @@ let loaded_bclose = 1
 if !exists('bclose_multiple')
   let bclose_multiple = 1
 endif
-
-" make all tabs to spaces
-nnoremap <silent> <leader>i :set expandtab<CR>:retab<CR>
 
 " Display an error message.
 function! s:Warn(msg)
@@ -228,6 +221,7 @@ nnoremap <silent> <Leader>bd :Bclose<CR>
 let g:polyglot_disabled = ["latex"]
 " nerd tree setup
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
 map <leader>e :NERDTreeToggle<CR>
 
 " AIRLINE SETUP
@@ -286,51 +280,27 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-" Coc vim setup
-set hidden
-set updatetime=300
-set shortmess+=c
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-" navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" goto remaps
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+let g:goyo_linenr = 0
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+" Autocompletion
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
 endfunction
 
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" Use `:Form` to format current buffer
-command! -nargs=0 Form :call CocAction('format')
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <leader>x  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
-" Search workspace symbls
-nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
-" Do default action fo next item.
-nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
