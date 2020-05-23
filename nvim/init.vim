@@ -9,6 +9,9 @@ Plug 'tpope/vim-commentary'
 " brackets management
 Plug 'tpope/vim-surround'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+
 " WINDOW MANAGEMENT
 
 " tmux navigator
@@ -304,3 +307,14 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" UltiSnips setup
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
