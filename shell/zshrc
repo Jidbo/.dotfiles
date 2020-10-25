@@ -59,3 +59,5 @@ then
     export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
