@@ -1,3 +1,5 @@
+" FUNCTIONS
+
 " auto reload .vimrc on write
 autocmd BufWritePost init.vim source %
 

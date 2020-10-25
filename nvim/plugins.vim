@@ -1,6 +1,8 @@
 " PLUGINS
 call plug#begin('~/.config/nvim/bundle')
 " USEFUL
+" ===================
+
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
@@ -14,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 
 " WINDOW MANAGEMENT
+" ===================
 
 " tmux navigator
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,6 +28,8 @@ Plug 'simeji/winresizer'
 Plug 'junegunn/goyo.vim'
 
 " FILE MANAGEMENT
+" ===================
+
 " nerd-tree
 Plug 'scrooloose/nerdtree'
 
@@ -36,6 +41,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 
 " GIT STUFF
+" ===================
+
 " git
 Plug 'tpope/vim-fugitive'
 
@@ -43,6 +50,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " COLORS
+" ===================
+
 " Plastic colorscheme
 Plug 'aonemd/kuroi.vim'
 
@@ -52,16 +61,18 @@ Plug 'norcalli/nvim-colorizer.lua'
 " powerline
 Plug 'vim-airline/vim-airline'
 
-" language packs
+" LANGUAGES
+" ===================
+
+" Linting
+Plug 'dense-analysis/ale'
+
 " disable latex before loading
 let g:polyglot_disabled = ["latex"]
 Plug 'sheerun/vim-polyglot'
 
 " latex
 Plug 'lervag/vimtex'
-
-" Linting
-Plug 'dense-analysis/ale'
 
 " Emmet
 Plug 'mattn/emmet-vim'

@@ -1,11 +1,15 @@
 " PLUGIN OPTIONS
 
-" nerd tree setup
+" NERD TREE SETUP
+" =========================
+
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 map <leader>e :NERDTreeToggle<CR>
 
 " AIRLINE SETUP
+" =========================
+
 " sections
 let g:airline_section_y = ""
 let g:airline_section_z = "%l/%L:%c"
@@ -20,7 +24,9 @@ let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#keymap#enabled = 0
 set ttimeoutlen=50
 
-" gitgutter setup
+" GITGUTTER SETUP
+" =========================
+
 let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
@@ -30,25 +36,37 @@ augroup VimDiff
 	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
 augroup END
 
-" fzf setup
+" FZF SETUP
+" =========================
+
 nmap <C-y> :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
 let g:fzf_buffers_jump = 1
 
-" Vimwiki setup
+" VIMWIKI SETUP
+" =========================
+
 let g:vimwiki_list = [{'path': '~/.wiki/'}]
 
-" vimtex setup
+" VIMTEX SETUP
+" =========================
+
 let g:vimtex_compile_progname = 'nvr'
 let g:tex_flavor = 'latex'
 
-" colors.lua setup
+" COLORS.LUA SETUP
+" =========================
+
 lua require'colorizer'.setup()
 
-" tmux setup
+" TMUX SETUP
+" =========================
+
 let g:tmuxcomplete#trigger = ''
 
 " GOYO
+" =========================
+
 function! s:goyo_enter()
   set noshowcmd
   set scrolloff=999
@@ -64,7 +82,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 let g:goyo_linenr = 0
 
-" Autocompletion
+" AUTOCOMPLETION
+" =========================
+
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
@@ -87,7 +107,8 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" UltiSnips setup
+" ULTISNIPS SETUP
+" =========================
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -98,5 +119,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Emmet Setup
+" EMMET SETUP
+" =========================
+
 let g:user_emmet_leader_key='<C-i>'
