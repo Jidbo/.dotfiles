@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
-
 # plugins
 if [ -f ~/.dotfiles/shell/plugins ]
 then
@@ -17,6 +15,7 @@ else
 fi
 
 source $ZSH/oh-my-zsh.sh
+
 
 
 # User configuration
@@ -36,11 +35,24 @@ alias la='ls -la'
 alias :q='exit'
 alias fresh="source ~/.zshrc"
 
+# ZSH Theme
+ZSH_THEME=""
+
+PROMPT_COLOR="cyan"
+
 # localcommands
 if [ -f ~/.dotfiles/shell/localcommands ]
 then
 	source ~/.dotfiles/shell/localcommands
 fi
+
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=' %{$fg[${PROMPT_COLOR}]%}%c%{$reset_color%} $(git_prompt_info)'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # Tmuxinator autocomplete
 if [ -f ~/.bin/tmuxinator.zsh ]; then
@@ -58,6 +70,3 @@ if _has ruby;
 then
     export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 fi
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
