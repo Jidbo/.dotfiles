@@ -15,6 +15,8 @@
       path: vim/vim
     ~/.config/nvim:
       path: nvim
+    ~/.config/kitty:
+      path: kitty
 
 - shell:
   # install ohmyzsh
