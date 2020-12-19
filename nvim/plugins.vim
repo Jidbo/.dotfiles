@@ -15,6 +15,9 @@ Plug 'tpope/vim-surround'
 " Snippets
 Plug 'SirVer/ultisnips'
 
+" Lanugage tool
+Plug 'dpelle/vim-LanguageTool'
+
 " WINDOW MANAGEMENT
 " ===================
 

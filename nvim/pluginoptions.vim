@@ -140,3 +140,8 @@ let g:UltiSnipsEditSplit="vertical"
 " =========================
 
 let g:user_emmet_leader_key='<C-i>'
+
+" LANGUAGETOOL SETUP
+" =========================
+" autocmd Filetype tex LanguageToolSetUp
+let g:languagetool_cmd='/usr/bin/languagetool'
