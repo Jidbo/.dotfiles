@@ -11,7 +11,7 @@ set background=dark
 hi MatchParen guibg=NONE guifg=red gui=bold
 
 " random settings
-set number
+set rnu
 set clipboard=unnamed
 set mouse=nvi
 " set smarttab
@@ -27,7 +27,6 @@ set history=250
 set noshowmode
 
 " tabs and line wrap
-set tabstop=4
 set wrapmargin=8
 set softtabstop=0 noexpandtab
 set shiftwidth=4
