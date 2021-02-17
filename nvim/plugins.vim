@@ -12,9 +12,6 @@ Plug 'tpope/vim-commentary'
 " brackets management
 Plug 'tpope/vim-surround'
 
-" Snippets
-Plug 'SirVer/ultisnips'
-
 " Lanugage tool
 Plug 'dpelle/vim-LanguageTool'
 
@@ -67,8 +64,12 @@ Plug 'vim-airline/vim-airline'
 " LANGUAGES
 " ===================
 
-" Linting
-Plug 'dense-analysis/ale'
+" nvim language server
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+" Autoformatter
+Plug 'sbdchd/neoformat'
 
 " disable latex before loading
 let g:polyglot_disabled = ["latex"]

@@ -41,6 +41,7 @@ augroup END
 
 nmap <C-y> :Buffers<CR>
 nmap <Leader>f :GFiles<CR>
+nmap <Leader>l :Lines<CR>
 let g:fzf_buffers_jump = 1
 
 " VIMWIKI SETUP
@@ -81,6 +82,12 @@ lua require'colorizer'.setup()
 
 let g:tmuxcomplete#trigger = ''
 
+" neo formatter
+nnoremap <leader>p :Neoformat<CR>
+
+" vim fugitive
+nnoremap <leader>gg :G<cr>
+
 " GOYO
 " =========================
 
@@ -101,40 +108,22 @@ let g:goyo_linenr = 0
 
 " AUTOCOMPLETION
 " =========================
+lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach, plugins = {pycodestyle = {maxLineLength=120}} }
 
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
+imap <silent> <c-p> <Plug>(completion_trigger)
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
 
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> <f2> <plug>(lsp-rename)
-    " refer to doc to add more commands
-endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-" ULTISNIPS SETUP
-" =========================
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snipps"]
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gh    <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gH    <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
 
 " EMMET SETUP
 " =========================
