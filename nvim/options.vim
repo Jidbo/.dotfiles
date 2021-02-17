@@ -11,6 +11,7 @@ set background=dark
 hi MatchParen guibg=NONE guifg=red gui=bold
 
 " random settings
+set number
 set rnu
 set clipboard=unnamed
 set mouse=nvi
