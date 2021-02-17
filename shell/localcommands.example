@@ -1,1 +1,4 @@
 alias vi="vim"
+
+# set prompt color
+PROMPT_COLOR="blue"
