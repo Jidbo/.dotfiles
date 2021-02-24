@@ -5,8 +5,6 @@
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-map <leader>e :NERDTreeToggle<CR>
-
 " AIRLINE SETUP
 " =========================
 
@@ -38,15 +36,10 @@ augroup END
 
 " FZF SETUP
 " =========================
-
-nmap <C-y> :Buffers<CR>
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>l :Lines<CR>
 let g:fzf_buffers_jump = 1
 
 " VIMWIKI SETUP
 " =========================
-
 let g:vimwiki_list = [{'path': '~/.wiki/'}]
 
 " VIMTEX SETUP
@@ -82,12 +75,6 @@ lua require'colorizer'.setup()
 
 let g:tmuxcomplete#trigger = ''
 
-" neo formatter
-nnoremap <leader>p :Neoformat<CR>
-
-" vim fugitive
-nnoremap <leader>gg :G<cr>
-
 " GOYO
 " =========================
 
@@ -111,23 +98,14 @@ let g:goyo_linenr = 0
 lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach, plugins = {pycodestyle = {maxLineLength=120}} }
+lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
 
-imap <silent> <c-p> <Plug>(completion_trigger)
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gh    <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gH    <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
 
 " EMMET SETUP
 " =========================
-
 let g:user_emmet_leader_key='<C-i>'
 
 " LANGUAGETOOL SETUP
