@@ -40,7 +40,10 @@ let g:fzf_buffers_jump = 1
 
 " VIMWIKI SETUP
 " =========================
-let g:vimwiki_list = [{'path': '~/.wiki/'}]
+let g:vimwiki_list = [{'path': '~/.notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_listsyms = '    X'
 
 " VIMTEX SETUP
 " =========================
