@@ -1,4 +1,5 @@
 alias vi="vim"
+export SDKMAN_DIR="/your/home/directory/.sdkman"
 
 # set prompt color
 PROMPT_COLOR="blue"
