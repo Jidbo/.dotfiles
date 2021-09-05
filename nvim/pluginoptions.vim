@@ -4,6 +4,13 @@
 " =========================
 
 let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
+let NERDTreeChDirMode=2
+highlight Directory guifg=#D1D5DB ctermfg=blue
+highlight NERDTreeHelp guifg=#4B5563 ctermfg=gray
+highlight NERDTreeCWD guifg=#9CA3AF ctermfg=gray
+highlight NERDTreeFlags guifg=#4B5563 ctermfg=green
+highlight NERDTreeExecFile guifg=#DC2626 ctermfg=green
+
 
 " AIRLINE SETUP
 " =========================
