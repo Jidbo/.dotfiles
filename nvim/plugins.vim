@@ -6,9 +6,6 @@ call plug#begin('~/.config/nvim/bundle')
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
-" comment plugin
-Plug 'tpope/vim-commentary'
-
 " brackets management
 Plug 'tpope/vim-surround'
 
@@ -31,7 +28,10 @@ Plug 'junegunn/goyo.vim'
 " ===================
 
 " nerd-tree
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
+
+" Icons
+Plug 'ryanoasis/vim-devicons'
 
 " fzf plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

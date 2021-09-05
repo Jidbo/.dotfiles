@@ -3,7 +3,7 @@
 " NERD TREE SETUP
 " =========================
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
 
 " AIRLINE SETUP
 " =========================
