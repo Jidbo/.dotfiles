@@ -36,7 +36,7 @@ Plug 'airblade/vim-gitgutter'
 
 " COLORS
 " Plastic colorscheme
-Plug 'aonemd/kuroi.vim'
+Plug 'jidbo/kuroi.vim'
 
 " powerline
 Plug 'vim-airline/vim-airline'
@@ -58,6 +58,7 @@ filetype plugin indent on    " required
 " syntax
 syntax on
 colorscheme kuroi
+set t_Co=256
 set background=dark
 let mapleader=" "
 hi MatchParen cterm=bold ctermbg=NONE ctermfg=red

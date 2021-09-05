@@ -53,7 +53,7 @@ Plug 'airblade/vim-gitgutter'
 " ===================
 
 " Plastic colorscheme
-Plug 'aonemd/kuroi.vim'
+Plug 'jidbo/kuroi.vim'
 
 " Color higlighting
 Plug 'norcalli/nvim-colorizer.lua'
