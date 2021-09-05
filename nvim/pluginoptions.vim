@@ -101,7 +101,7 @@ let g:goyo_linenr = 0
 lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.pylsp.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.texlab.setup{ on_attach=require'completion'.on_attach }
 lua <<EOF
   lspconfig = require "lspconfig"
@@ -130,3 +130,16 @@ let g:user_emmet_leader_key='<C-i>'
 " =========================
 " autocmd Filetype tex LanguageToolSetUp
 let g:languagetool_cmd='/usr/bin/languagetool'
+
+" TREESITTER
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = "maintained",
+"   highlight = {
+"     enable = true,
+"   },
+"   indent = {
+"     enable = true
+"   },
+" }
+" EOF

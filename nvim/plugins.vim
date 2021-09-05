@@ -71,6 +71,10 @@ Plug 'nvim-lua/completion-nvim'
 " Autoformatter
 Plug 'sbdchd/neoformat'
 
+" treesitter
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+
 " disable latex before loading
 let g:polyglot_disabled = ["latex"]
 Plug 'sheerun/vim-polyglot'
