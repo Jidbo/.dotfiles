@@ -11,6 +11,8 @@ highlight NERDTreeCWD guifg=#9CA3AF ctermfg=gray
 highlight NERDTreeFlags guifg=#4B5563 ctermfg=green
 highlight NERDTreeExecFile guifg=#DC2626 ctermfg=green
 
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " AIRLINE SETUP
 " =========================
