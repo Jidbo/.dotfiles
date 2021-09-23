@@ -17,6 +17,8 @@
       path: nvim
     ~/.config/kitty:
       path: kitty
+    ~/.config/fish:
+      path: fish
 
 - shell:
   # install ohmyzsh
