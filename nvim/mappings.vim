@@ -32,6 +32,13 @@ nnoremap <leader>gg :G<cr>
 " neo formatter
 nnoremap <leader>p :Neoformat<CR>
 
+" goyo mapping
+nnoremap <silent> <leader>w :Goyo<CR>
+
+" spelling
+nnoremap <silent> <leader>se :set spell spelllang=en<CR>
+nnoremap <silent> <leader>sd :set spell spelllang=de<CR>
+
 " lsp mappings
 imap <silent> <c-p> <Plug>(completion_trigger)
 

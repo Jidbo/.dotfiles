@@ -92,18 +92,20 @@ let g:tmuxcomplete#trigger = ''
 
 function! s:goyo_enter()
   set noshowcmd
+  set noshowmode
   set scrolloff=999
 endfunction
 
 function! s:goyo_leave()
   set showcmd
+  set showmode
   set scrolloff=1
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-let g:goyo_linenr = 0
+let g:goyo_width = 120
 
 " AUTOCOMPLETION
 " =========================
@@ -143,7 +145,6 @@ let g:languagetool_cmd='/usr/bin/languagetool'
 " TREESITTER
 " lua <<EOF
 " require'nvim-treesitter.configs'.setup {
-"   ensure_installed = "maintained",
 "   highlight = {
 "     enable = true,
 "   },
