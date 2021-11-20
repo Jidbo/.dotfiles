@@ -12,6 +12,9 @@ Plug 'tpope/vim-surround'
 " Lanugage tool
 Plug 'dpelle/vim-LanguageTool'
 
+" navigation
+Plug 'justinmk/vim-sneak'
+
 " WINDOW MANAGEMENT
 " ===================
 
@@ -81,9 +84,6 @@ Plug 'sheerun/vim-polyglot'
 
 " latex
 Plug 'lervag/vimtex'
-
-" Emmet
-Plug 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()
