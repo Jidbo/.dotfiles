@@ -21,10 +21,15 @@ nnoremap <leader>h :set rnu!<CR>
 " nerdtree
 map <leader>e :NERDTreeToggle<CR>
 
-" fzf
-nmap <C-y> :Buffers<CR>
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>l :Lines<CR>
+" Telescope
+nnoremap <C-y> <cmd>Telescope buffers<CR>
+nnoremap <leader>f <cmd>Telescope find_files<CR>
+nnoremap <leader>l <cmd>Telescope live_grep<CR>
+nnoremap <silent> gD  <cmd>Telescope lsp_implementations<CR>
+nnoremap <silent> gH  <cmd>Telescope lsp_code_actions<CR>
+nnoremap <silent> gd  <cmd>Telescope lsp_definitions<CR>
+nnoremap <silent> gr  <cmd>Telescope lsp_references<CR>
+nnoremap <silent> gy  <cmd>Telescope treesitter<CR>
 
 " vim fugitive
 nnoremap <leader>gg :G<cr>

@@ -31,8 +31,8 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 " fzf plugin
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " vimwiki
 Plug 'vimwiki/vimwiki'
@@ -69,12 +69,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'sbdchd/neoformat'
 
 " treesitter
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-treesitter/playground'
-
-" disable latex before loading
-let g:polyglot_disabled = ["latex"]
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " latex
 Plug 'lervag/vimtex'

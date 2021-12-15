@@ -43,10 +43,6 @@ augroup VimDiff
 	autocmd VimEnter,FilterWritePre * if &diff | GitGutterDisable | endif
 augroup END
 
-" FZF SETUP
-" =========================
-let g:fzf_buffers_jump = 1
-
 " VIMWIKI SETUP
 " =========================
 let g:vimwiki_list = [{'path': '~/.notes/',
@@ -143,13 +139,13 @@ let g:user_emmet_leader_key='<C-i>'
 let g:languagetool_cmd='/usr/bin/languagetool'
 
 " TREESITTER
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"   highlight = {
-"     enable = true,
-"   },
-"   indent = {
-"     enable = true
-"   },
-" }
-" EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true
+  },
+}
+EOF
