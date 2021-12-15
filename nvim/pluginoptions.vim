@@ -88,13 +88,11 @@ let g:tmuxcomplete#trigger = ''
 
 function! s:goyo_enter()
   set noshowcmd
-  set noshowmode
   set scrolloff=999
 endfunction
 
 function! s:goyo_leave()
   set showcmd
-  set showmode
   set scrolloff=1
 endfunction
 
@@ -105,38 +103,10 @@ let g:goyo_width = 120
 
 " AUTOCOMPLETION
 " =========================
-lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.pylsp.setup{ on_attach=require'completion'.on_attach }
-lua require'lspconfig'.texlab.setup{ on_attach=require'completion'.on_attach }
-lua <<EOF
-  lspconfig = require "lspconfig"
-  lspconfig.gopls.setup {
-    cmd = {"gopls", "serve"},
-    settings = {
-      gopls = {
-        analyses = {
-          unusedparams = true,
-        },
-        staticcheck = true,
-      },
-    },
-  }
-EOF
-
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
-
-" EMMET SETUP
-" =========================
-let g:user_emmet_leader_key='<C-i>'
-
-" LANGUAGETOOL SETUP
-" =========================
-" autocmd Filetype tex LanguageToolSetUp
-let g:languagetool_cmd='/usr/bin/languagetool'
+lua require('autocompletion')
 
 " TREESITTER
 lua <<EOF
