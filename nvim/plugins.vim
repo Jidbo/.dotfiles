@@ -9,12 +9,6 @@ Plug 'editorconfig/editorconfig-vim'
 " brackets management
 Plug 'tpope/vim-surround'
 
-" Lanugage tool
-Plug 'dpelle/vim-LanguageTool'
-
-" navigation
-Plug 'justinmk/vim-sneak'
-
 " WINDOW MANAGEMENT
 " ===================
 
