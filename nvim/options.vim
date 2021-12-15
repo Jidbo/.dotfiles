@@ -6,7 +6,7 @@ let mapleader=" "
 
 " color settings
 set termguicolors
-colorscheme kuroi
+colorscheme kuroi 
 set background=dark
 hi MatchParen guibg=NONE guifg=red gui=bold
 
@@ -15,6 +15,7 @@ set number
 set rnu
 set clipboard=unnamed
 set mouse=nvi
+
 " set smarttab
 set expandtab
 set tabstop=4
@@ -53,3 +54,6 @@ set splitright
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+" highlight yanked
+au TextYankPost * silent! lua vim.highlight.on_yank()
