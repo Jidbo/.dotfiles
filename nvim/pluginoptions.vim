@@ -100,22 +100,3 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 let g:goyo_width = 120
-
-" AUTOCOMPLETION
-" =========================
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-
-lua require('autocompletion')
-
-" TREESITTER
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true
-  },
-}
-EOF

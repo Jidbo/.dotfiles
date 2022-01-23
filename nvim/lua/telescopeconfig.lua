@@ -1,0 +1,21 @@
+-- load telescope
+
+-- require("telescope").setup {
+--   extensions = {
+--     file_browser = {
+--       -- theme = "ivy",
+--       -- initial_mode = "normal",
+--       mappings = {
+--         ["i"] = {
+--           ["<C-->"] = fb_actions.goto_parent_dir,
+--         },
+--         ["n"] = {
+--           ["b"] = fb_actions.goto_parent_dir,
+--         },
+--       },
+--     },
+--   },
+-- }
+-- 
+-- -- plugins
+-- require("telescope").load_extension "file_browser"
