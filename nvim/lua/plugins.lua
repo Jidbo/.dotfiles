@@ -28,13 +28,11 @@ Plug 'junegunn/goyo.vim'
 -- FILE MANAGEMENT
 -- ===================
 
--- nerd-tree
-Plug 'preservim/nerdtree'
+-- nvim-tree.lua
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
--- Icons
-Plug 'ryanoasis/vim-devicons'
-
--- fzf plugin
+-- telescope plugin
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 

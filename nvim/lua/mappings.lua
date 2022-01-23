@@ -35,8 +35,8 @@ map {'i', '[,', '[<CR>],<C-c>O'}
 -- toggle hybrid mode
 map {'n', '<leader>h', ':set rnu!<CR>'}
 
--- nerdtree
-map {'n', '<leader>e', ':NERDTreeToggle<CR>'}
+-- nvim-tree.lua
+map {'n', '<leader>e', ':NvimTreeToggle<CR>'}
 
 -- Telescope
 map {'n', '<C-y>', '<cmd>Telescope buffers<CR>'}
