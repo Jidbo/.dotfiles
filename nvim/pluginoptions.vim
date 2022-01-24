@@ -1,25 +1,7 @@
 " PLUGIN OPTIONS
 
-" AIRLINE SETUP
-" =========================
-
-" sections
-let g:airline_section_y = ""
-let g:airline_section_z = "%l/%L:%c"
-let g:airline_section_b = "%{airline#util#wrap(airline#extensions#branch#get_head(),0)}"
-" other stuff
-let g:airline_theme='luna'
-let g:airline_powerline_fonts = 1
-let g:airline_inactive_collapse=1
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#wordcount#enabled = 0
-let g:airline#extensions#keymap#enabled = 0
-set ttimeoutlen=50
-
 " GITGUTTER SETUP
 " =========================
-
 let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'

@@ -58,7 +58,7 @@ Plug 'jidbo/sonokai'
 Plug 'norcalli/nvim-colorizer.lua'
 
 -- powerline
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
 
 -- LANGUAGES
 -- ===================
