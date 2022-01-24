@@ -30,11 +30,7 @@ vim.opt.showmode=false
 vim.opt.completeopt='menuone,noinsert,noselect'
 
 -- tabs and line wrap
-vim.opt.expandtab=true
-vim.opt.tabstop=2
 vim.opt.wrapmargin=8
-vim.opt.softtabstop=0
-vim.opt.shiftwidth=2
 vim.opt.backspace='indent,eol,start'
 vim.opt.encoding='utf-8'
 vim.opt.autoindent=true

@@ -10,6 +10,9 @@ Plug 'editorconfig/editorconfig-vim'
 -- brackets management
 Plug 'tpope/vim-surround'
 
+-- shift and tab setup
+Plug 'tpope/vim-sleuth'
+
 -- new text objects
 Plug 'wellle/targets.vim'
 
