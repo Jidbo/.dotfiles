@@ -1,6 +1,5 @@
 # VARIABLES
 set EDITOR vim
-set TERM screen-256color
 
 # KEYBINDINGS
 # move words
