@@ -4,14 +4,13 @@
 vim.cmd [[
   syntax on
   let mapleader=" "
-  colorscheme kuroi 
+  colorscheme sonokai
   hi MatchParen guibg=NONE guifg=red gui=bold
   set shortmess+=c
 ]]
 
 -- color settings
 vim.opt.termguicolors=true
-vim.opt.background='dark'
 
 -- random settings
 vim.opt.number=true

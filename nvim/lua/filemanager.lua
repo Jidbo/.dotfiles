@@ -44,6 +44,9 @@ vim.cmd [[hi NvimTreeGitStaged guifg=#DC2626]]
 vim.cmd [[hi NvimTreeGitNew guifg=#DC2626]]
 vim.cmd [[hi NvimTreeGitDeleted guifg=#DC2626]]
 vim.cmd [[hi NvimTreeSpecialFile guifg=#F8FAFC ]]
+vim.cmd [[hi NvimTreeFolderName guifg=#D1D5DB ]]
+vim.cmd [[hi NvimTreeOpenedFolderName guifg=#D1D5DB ]]
+vim.cmd [[hi NvimTreeEmptyFolderName guifg=#D1D5DB ]]
 
 -- setup
 require'nvim-tree'.setup {
@@ -61,7 +64,7 @@ require'nvim-tree'.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {
