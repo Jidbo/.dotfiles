@@ -27,14 +27,14 @@ cmp.setup({
   })
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- Use buffer source for `/`
 cmp.setup.cmdline('/', {
   sources = {
     { name = 'buffer' }
   }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- Use cmdline & path source for ':'
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
@@ -43,24 +43,28 @@ cmp.setup.cmdline(':', {
   })
 })
 
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
 
-lspconfig = require "lspconfig"
-lspconfig.tsserver.setup{ capabilities = capabilities }
-lspconfig.intelephense.setup{ capabilities = capabilities }
-lspconfig.vuels.setup{ capabilities = capabilities }
-lspconfig.pylsp.setup{ capabilities = capabilities}
-lspconfig.texlab.setup{ capabilities = capabilities }
-lspconfig.gopls.setup {
-	cmd = {"gopls", "serve"},
-	settings = {
-	  gopls = {
-		analyses = {
-		  unusedparams = true,
-		},
-		staticcheck = true,
-	  },
-	},
-  capabilities = capabilities
-}
+  local opts = { noremap = true, silent = true }
+  buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+  buf_set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap("n", "gD", "<cmd>Telescope lsp_implementations<CR>", opts)
+  buf_set_keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  buf_set_keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  buf_set_keymap("n", "gH", "<cmd>Telescope lsp_code_actions()<CR>", opts)
+  buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+  buf_set_keymap("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+end
+
+local lsp_installer = require "nvim-lsp-installer"
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  opts.on_attach = on_attach
+  opts.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+  server:setup(opts)
+  vim.cmd [[ do User LspAttachBuffers ]]
+end)
