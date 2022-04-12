@@ -50,7 +50,6 @@ vim.cmd [[hi NvimTreeEmptyFolderName guifg=#D1D5DB ]]
 
 -- setup
 require'nvim-tree'.setup {
-  auto_close          = true,
   update_cwd          = true,
   update_to_buf_dir   = {
     enable = true,
