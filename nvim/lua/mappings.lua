@@ -1,21 +1,4 @@
-local map = function(key)
-  -- get the extra options
-  local opts = {noremap = true}
-  for i, v in pairs(key) do
-    if type(i) == 'string' then opts[i] = v end
-  end
-
-  -- basic support for buffer-scoped keybindings
-  local buffer = opts.buffer
-  opts.buffer = nil
-
-  if buffer then
-    vim.api.nvim_buf_set_keymap(0, key[1], key[2], key[3], opts)
-  else
-    vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
-  end
-end
-
+local map = require("utils").map
 -- search for visual selection
 map {'v', '//', 'y/<C-R>"<CR>'}
 map {'n', 'H', '^'}
@@ -43,6 +26,9 @@ map {'n', '<C-y>', '<cmd>Telescope buffers<CR>'}
 map {'n', '<leader>f', '<cmd>Telescope find_files<CR>'}
 map {'n', '<leader>l', '<cmd>Telescope live_grep<CR>'}
 map {'n', '<silent> gy', '<cmd>Telescope treesitter<CR>'}
+
+map {'n', '<leader>wm', '<cmd>lua require("notes").list()<CR>'}
+map {'n', '<leader>wt', '<cmd>lua require("notes").tags()<CR>'}
 
 -- neo formatter
 map {'n', '<leader>p', ':Neoformat<CR>'}
