@@ -1,6 +1,5 @@
 -- PLUGIN OPTIONS
 
-
 -- GITGUTTER SETUP
 -- =========================
 vim.api.nvim_set_var('gitgutter_sign_added', '∙')

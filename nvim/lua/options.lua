@@ -2,15 +2,14 @@
 
 -- syntax
 vim.cmd [[
-  syntax on
-  let mapleader=" "
-  colorscheme sonokai
-  hi MatchParen guibg=NONE guifg=red gui=bold
+  let mapleader = " "
   set shortmess+=c
+  colorscheme sonokai
 ]]
 
 -- color settings
 vim.opt.termguicolors=true
+vim.g.do_filetype_lua = 1
 
 -- random settings
 vim.opt.number=true
