@@ -23,7 +23,6 @@ vim.g.nvim_tree_icons = {
 
 
 -- extra options
-vim.g.nvim_tree_indent_markers=1
 vim.g.nvim_tree_add_trailing=1
 vim.g.nvim_tree_special_files= {
   ["README.md"] = true,
@@ -49,8 +48,15 @@ vim.cmd [[hi NvimTreeOpenedFolderName guifg=#D1D5DB ]]
 vim.cmd [[hi NvimTreeEmptyFolderName guifg=#D1D5DB ]]
 
 -- setup
-require'nvim-tree'.setup {
-  update_cwd          = true,
+local nvimtree = require'nvim-tree'
+
+nvimtree.setup {
+  update_cwd = true,
+  renderer = {
+    indent_markers = {
+      enable = true,
+    },
+  },
   update_to_buf_dir   = {
     enable = true,
     auto_open = true,
@@ -78,3 +84,6 @@ require'nvim-tree'.setup {
 }
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+
+-- KEYMAPS
+vim.keymap.set('n', '<leader>e', nvimtree.toggle)

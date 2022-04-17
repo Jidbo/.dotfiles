@@ -18,9 +18,6 @@ vim.keymap.set('i', '[,', '[<CR>],<C-c>O')
 -- toggle hybrid mode
 vim.keymap.set('n', '<leader>h', ':set rnu!<CR>')
 
--- nvim-tree.lua
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
-
 -- Telescope
 vim.keymap.set('n', '<C-y>', '<cmd>Telescope buffers<CR>')
 vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
