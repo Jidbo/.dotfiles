@@ -25,8 +25,8 @@ Plug 'christoomey/vim-tmux-navigator'
 -- winresizer
 Plug 'simeji/winresizer'
 
--- goyo
-Plug 'junegunn/goyo.vim'
+-- vim zenmode
+Plug 'folke/zen-mode.nvim'
 
 -- FILE MANAGEMENT
 -- ===================
