@@ -5,16 +5,15 @@ local sorters = require "telescope.sorters"
 local conf = require("telescope.config").values
 local flatten = vim.tbl_flatten
 
-local M = {}
 
-function M.list()
+local function list()
   require("telescope.builtin").find_files {
     prompt_title = "Notes",
     cwd = "~/.notes"
   }
 end
 
-function M.tags()
+local function tags()
   local opts = {}
 
   local vimgrep_arguments = conf.vimgrep_arguments
@@ -44,4 +43,19 @@ function M.tags()
   }):find()
 end
 
-return M
+local function new_note()
+  local note_name = vim.ui.input({prompt = 'New note name: '}, function(input)
+    print(input)
+  end)
+end
+
+-- VIMWIKI SETUP
+-- =========================
+vim.api.nvim_set_var('vimwiki_list', {{path = '~/.notes/', syntax = 'markdown', ext = '.md'}})
+vim.api.nvim_set_var('vimwiki_hl_headers', 1)
+vim.api.nvim_set_var('vimwiki_listsyms', '    X')
+
+-- KEYMAPS
+vim.keymap.set('n', '<leader>wm', list)
+vim.keymap.set('n', '<leader>wt', tags)
+vim.keymap.set('n', '<leader>wn', new_note)

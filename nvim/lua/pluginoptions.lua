@@ -1,4 +1,4 @@
--- PLUGIN OPTIONS
+-- SETUP FO VARIOUS PLUGIN OPTIONS
 
 -- GITGUTTER SETUP
 -- =========================
@@ -14,15 +14,8 @@ augroup VimDiff
 augroup END
 ]]
 
--- VIMWIKI SETUP
--- =========================
-vim.api.nvim_set_var('vimwiki_list', {{path = '~/.notes/', syntax = 'markdown', ext = '.md'}})
-vim.api.nvim_set_var('vimwiki_hl_headers', 1)
-vim.api.nvim_set_var('vimwiki_listsyms', '    X')
-
 -- VIMTEX SETUP
 -- =========================
-
 vim.api.nvim_set_var('vimtex_compiler_engine', 'lualatex')
 vim.api.nvim_set_var('vimtex_quickfix_mode', 0)
 vim.api.nvim_set_var('tex_flavor', 'latex')

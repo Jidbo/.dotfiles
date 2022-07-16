@@ -24,9 +24,6 @@ vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<silent> gy', '<cmd>Telescope treesitter<CR>')
 
-vim.keymap.set('n', '<leader>wm', require("notes").list)
-vim.keymap.set('n', '<leader>wt', require("notes").tags)
-
 -- neo formatter
 vim.keymap.set('n', '<leader>p', ':Neoformat<CR>')
 
