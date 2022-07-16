@@ -1,36 +1,4 @@
 -- NVIM TREE setup
--- icons
-vim.g.nvim_tree_icons = {
-  default =        '',
-  symlink =        '',
-  git = {
-    unstaged =     "✗",
-    staged =       "✓",
-    unmerged =     "",
-    renamed =      "➜",
-    untracked =    "★",
-    deleted =      "",
-   },
-  folder = {
-    default =      "",
-    open =         "",
-    empty =        "",
-    empty_open =   "",
-    symlink =      "",
-    symlink_open = "",
-   },
-}
-
-
--- extra options
-vim.g.nvim_tree_add_trailing=1
-vim.g.nvim_tree_special_files= {
-  ["README.md"] = true,
-  ["readme.md"] = true,
-  Pipfile = true,
-  Makefile = true,
-  ["package.json"] = true,
-}
 
 -- colors
 vim.cmd [[hi Directory guifg=#D1D5DB ctermfg=blue]]
@@ -53,13 +21,15 @@ local nvimtree = require'nvim-tree'
 nvimtree.setup {
   update_cwd = true,
   renderer = {
+    add_trailing = false,
+    special_files = {"README.md", "readme.md", "Pipfile", "Makefile", "package.json"},
     indent_markers = {
       enable = true,
     },
   },
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
+  hijack_directories = {
+        enable = true,
+        auto_open = true,
   },
   system_open = {
     cmd  = "open"
