@@ -8,7 +8,7 @@ vim.call('plug#begin', '~/.config/nvim/bundle')
 Plug 'editorconfig/editorconfig-vim'
 
 -- brackets management
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
 
 -- shift and tab setup
 Plug 'tpope/vim-sleuth'

@@ -66,3 +66,7 @@ vim.api.nvim_set_var('goyo_width', 120)
 -- COLORS.LUA SETUP
 -- =========================
 require('colorizer').setup()
+
+
+-- nvim surround
+require("nvim-surround").setup()
