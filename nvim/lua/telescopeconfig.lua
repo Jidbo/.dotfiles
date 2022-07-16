@@ -1,21 +1,8 @@
--- load telescope
+-- TELESCOPE
 
--- require("telescope").setup {
---   extensions = {
---     file_browser = {
---       -- theme = "ivy",
---       -- initial_mode = "normal",
---       mappings = {
---         ["i"] = {
---           ["<C-->"] = fb_actions.goto_parent_dir,
---         },
---         ["n"] = {
---           ["b"] = fb_actions.goto_parent_dir,
---         },
---       },
---     },
---   },
--- }
--- 
--- -- plugins
--- require("telescope").load_extension "file_browser"
+-- KEYMAPS
+vim.keymap.set('n', '<C-y>', '<cmd>Telescope buffers<CR>')
+vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<leader>l', '<cmd>Telescope live_grep<CR>')
+vim.keymap.set('n', '<silent> gy', '<cmd>Telescope treesitter<CR>')
+
