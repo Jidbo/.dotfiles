@@ -53,13 +53,14 @@ local on_attach = function(client, bufnr)
 
   local opts = { noremap = true, silent = true }
   buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-  buf_set_keymap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   buf_set_keymap("n", "gD", "<cmd>Telescope lsp_implementations<CR>", opts)
-  buf_set_keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  buf_set_keymap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  buf_set_keymap("n", "gH", "<cmd>Telescope lsp_code_actions<CR>", opts)
-  buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-  buf_set_keymap("n", "ge", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  -- buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+  vim.keymap.set("n", "gf",vim.lsp.buf.formatting)
+  vim.keymap.set("n", "gh", vim.lsp.buf.hover)
+  vim.keymap.set("n", "ge", vim.diagnostic.open_float)
+  vim.keymap.set("n", "gs", vim.lsp.buf.signature_help)
+  vim.keymap.set("n", "gR", vim.lsp.buf.rename)
+  vim.keymap.set("n", "gH", vim.lsp.buf.code_action)
 end
 
 local lsp_installer = require "nvim-lsp-installer"
@@ -71,3 +72,10 @@ lsp_installer.on_server_ready(function(server)
   server:setup(opts)
   vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+require "lsp_signature".setup {
+  handler_opts = {
+    border = "rounded"
+  },
+  toggle_key = "<M-r>",
+}

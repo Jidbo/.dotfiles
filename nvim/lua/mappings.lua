@@ -24,9 +24,6 @@ vim.keymap.set('n', '<leader>f', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<silent> gy', '<cmd>Telescope treesitter<CR>')
 
--- neo formatter
-vim.keymap.set('n', '<leader>p', ':Neoformat<CR>')
-
 -- spelling
 vim.keymap.set('n', '<silent> <leader>se', ':set spell spelllang=en<CR>')
 vim.keymap.set('n', '<silent> <leader>sd', ':set spell spelllang=de<CR>')

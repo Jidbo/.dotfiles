@@ -41,4 +41,10 @@ require('colorizer').setup()
 
 
 -- nvim surround
-require("nvim-surround").setup()
+require("nvim-surround").setup({
+	surrounds = {
+		["*"] = {
+			add = { "*", "*" },
+		},
+	}
+})
