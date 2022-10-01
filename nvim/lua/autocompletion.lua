@@ -30,6 +30,31 @@ cmp.setup({
   })
 })
 
+-- Use buffer source for `vimwiki`
+cmp.setup.cmdline('vimwiki', {
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline('md', {
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline('tex', {
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' }
+  }
+})
+
 -- Use buffer source for `/`
 cmp.setup.cmdline('/', {
   sources = {

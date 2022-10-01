@@ -48,8 +48,8 @@ Plug 'vimwiki/vimwiki'
 -- git
 Plug 'tpope/vim-fugitive'
 
--- vim gitgutter
-Plug 'airblade/vim-gitgutter'
+-- git signs
+Plug 'lewis6991/gitsigns.nvim'
 
 -- COLORS
 -- ===================
