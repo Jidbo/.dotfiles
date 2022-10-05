@@ -10,6 +10,9 @@ Plug 'editorconfig/editorconfig-vim'
 -- brackets management
 Plug 'kylechui/nvim-surround'
 
+-- comments
+Plug 'numToStr/Comment.nvim'
+
 -- shift and tab setup
 Plug 'tpope/vim-sleuth'
 
