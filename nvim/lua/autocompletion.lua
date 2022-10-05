@@ -51,15 +51,15 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
 
-  local opts = { noremap = true, silent = true }
-  buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-  buf_set_keymap("n", "gD", "<cmd>Telescope lsp_implementations<CR>", opts)
-  vim.keymap.set("n", "gf", vim.lsp.buf.format)
-  vim.keymap.set("n", "gh", vim.lsp.buf.hover)
-  vim.keymap.set("n", "ge", vim.diagnostic.open_float)
-  vim.keymap.set("n", "gs", vim.lsp.buf.signature_help)
-  vim.keymap.set("n", "gR", vim.lsp.buf.rename)
-  vim.keymap.set("n", "gH", vim.lsp.buf.code_action)
+  local opts = { noremap = true, silent = true, buffer=0 }
+  vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+  vim.keymap.set("n", "gD", "<cmd>Telescope lsp_implementations<CR>", opts)
+  vim.keymap.set("n", "gf", function() vim.lsp.buf.format {async = true} end, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+  vim.keymap.set("n", "ge", vim.diagnostic.open_float, opts)
+  vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+  vim.keymap.set("n", "gR", vim.lsp.buf.rename, opts)
+  vim.keymap.set("n", "gH", vim.lsp.buf.code_action, opts)
 end
 
 -- LSP INSTALLER
