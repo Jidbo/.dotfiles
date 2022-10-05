@@ -23,9 +23,12 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp',
+      entry_filter = function(entry, ctx)
+        return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
+      end
+    },
     { name = 'luasnip' },
-  }, {
     { name = 'buffer' },
   })
 })
@@ -80,7 +83,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
   buf_set_keymap("n", "gD", "<cmd>Telescope lsp_implementations<CR>", opts)
   -- buf_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-  vim.keymap.set("n", "gf",vim.lsp.buf.formatting)
+  vim.keymap.set("n", "gf",vim.lsp.buf.format)
   vim.keymap.set("n", "gh", vim.lsp.buf.hover)
   vim.keymap.set("n", "ge", vim.diagnostic.open_float)
   vim.keymap.set("n", "gs", vim.lsp.buf.signature_help)
