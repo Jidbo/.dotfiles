@@ -63,19 +63,27 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSP INSTALLER
-local lsp_installer = require "nvim-lsp-installer"
-lsp_installer.setup {
-  automatic_installation = false,
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+
+require("mason-lspconfig").setup_handlers {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function (server_name) -- default handler (optional)
+        require("lspconfig")[server_name].setup {
+            on_attach = on_attach,
+            capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    }
+    end,
+    -- Next, you can provide a dedicated handler for specific servers.
+    -- For example, a handler override for the `rust_analyzer`:
+    ["rust_analyzer"] = function ()
+        require("rust-tools").setup {}
+    end
 }
 
-local lspconfig = require "lspconfig"
-
-for _, server in ipairs(lsp_installer.get_installed_servers()) do
-  lspconfig[server.name].setup {
-    on_attach = on_attach,
-    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  }
-end
 
 -- EXTRA SETUP
 require'lspconfig'.lua_ls.setup {
@@ -100,6 +108,7 @@ require'lspconfig'.lua_ls.setup {
     },
   },
 }
+
 
 -- LSP SIGNATURE
 require "lsp_signature".setup {
