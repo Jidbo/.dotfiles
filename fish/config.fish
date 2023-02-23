@@ -1,5 +1,6 @@
 # VARIABLES
-set EDITOR vim
+set -gx EDITOR (type -p nvim)
+# set -gx GOPATH "~/.go"
 
 # KEYBINDINGS
 # move words
