@@ -5,7 +5,6 @@ null_ls.setup({
         -- FORMATTING
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.eslint,
-        null_ls.builtins.formatting.prettierd,
         -- DIAGNOSTICS
         null_ls.builtins.diagnostics.eslint,
         -- COMPLETIONS
