@@ -19,11 +19,17 @@ Plug 'tpope/vim-sleuth'
 -- new text objects
 Plug 'wellle/targets.vim'
 
+-- faster jump
+Plug 'ggandor/leap.nvim'
+
+-- auto brackets
+Plug 'windwp/nvim-autopairs'
+
 -- WINDOW MANAGEMENT
 -- ===================
 
 -- tmux navigator
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'numToStr/Navigator.nvim'
 
 -- winresizer
 Plug 'simeji/winresizer'
@@ -70,8 +76,9 @@ Plug 'nvim-lualine/lualine.nvim'
 -- ===================
 
 -- nvim completion
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
 
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
@@ -86,9 +93,6 @@ Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-
--- Autoformatter
--- Plug 'sbdchd/neoformat'
 
 -- treesitter
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
