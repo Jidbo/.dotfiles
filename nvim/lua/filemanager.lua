@@ -42,12 +42,6 @@ nvimtree.setup {
     ignore = false,
     timeout = 500,
   },
-  view = {
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
-  },
   trash = {
     cmd = "trash"
   }
@@ -56,4 +50,4 @@ nvimtree.setup {
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
 -- KEYMAPS
-vim.keymap.set('n', '<leader>e', nvimtree.toggle)
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')
