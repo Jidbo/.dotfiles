@@ -1,5 +1,6 @@
 # VARIABLES
 set -gx EDITOR (type -p nvim)
+set -x LANG en_US.UTF-8
 # set -gx GOPATH "~/.go"
 
 # KEYBINDINGS
