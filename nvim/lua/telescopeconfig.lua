@@ -22,9 +22,20 @@ local function find()
   }
 end
 
+local function buffers()
+  require("telescope.builtin").buffers {
+    sort_lastused = true
+  }
+end
+
+local function treesitter()
+  require("telescope.builtin").treesitter()
+end
+
 -- KEYMAPS
-vim.keymap.set('n', '<C-y>', '<cmd>Telescope buffers<CR>')
+vim.keymap.set('n', '<C-y>', buffers)
 vim.keymap.set('n', '<leader>f', find)
+vim.keymap.set('n', '<leader>s', treesitter)
 vim.keymap.set('n', '<leader>l', '<cmd>Telescope live_grep<CR>')
 vim.keymap.set('n', '<silent> gy', '<cmd>Telescope treesitter<CR>')
 
