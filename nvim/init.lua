@@ -1,22 +1,5 @@
--- BASIC OPTIONS
-require('plugins')
-require('options')
-require('mappings')
-require('pluginoptions')
+require("config.lazy")
 
--- PLUGIN OPTIONS
-require('telescopeconfig')
-require('statusline')
-require('snippets')
-require('autocompletion')
-require('treesitterconfig')
-require('comments')
-require('troubleconfig')
-require('null-ls-config')
-require('gitsigns-config')
-require('leapconfig')
-require('filemanager')
-require('notes')
-require('zenmode')
-require('tmux-navigator')
-require('autopairs')
+require('options')
+
+require('mappings')

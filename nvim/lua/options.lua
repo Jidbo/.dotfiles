@@ -3,7 +3,6 @@
 -- syntax
 vim.cmd [[
   let mapleader = " "
-  colorscheme sonokai
 ]]
 
 -- color settings
