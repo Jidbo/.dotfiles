@@ -16,5 +16,3 @@ vim.keymap.set('n', '<silent> <leader>sd', ':set spell spelllang=de<CR>')
 -- source
 vim.keymap.set('n', '<leader><leader>x', ':source ~/.config/nvim/init.lua<CR>')
 vim.keymap.set('n', '<leader>x', ':source %<CR>')
-
-vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format() end)
