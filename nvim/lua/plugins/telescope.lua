@@ -24,24 +24,24 @@ return {
         hidden = true
       }
     end
-    
+
     local function buffers()
       require("telescope.builtin").buffers {
         sort_lastused = true
       }
     end
-    
+
     local function treesitter()
       require("telescope.builtin").treesitter()
     end
-    
+
     -- KEYMAPS
     vim.keymap.set('n', '<C-y>', buffers)
     vim.keymap.set('n', '<leader>f', find)
     vim.keymap.set('n', '<leader>s', treesitter)
   end,
   keys = {
-    {'<leader>l', '<cmd>Telescope live_grep<CR>'},
-    {'<silent> gy', '<cmd>Telescope treesitter<CR>'}
+    { '<leader>l',   '<cmd>Telescope live_grep<CR>' },
+    { '<silent> gy', '<cmd>Telescope treesitter<CR>' }
   }
 }

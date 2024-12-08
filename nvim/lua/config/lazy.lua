@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -24,16 +24,23 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { "jidbo/sonokai", lazy = false, priority = 1000, config = function()
-      vim.cmd([[colorscheme sonokai]])
-    end,
+    {
+      "jidbo/sonokai",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.cmd([[colorscheme sonokai]])
+      end,
     },
-    { "windwp/nvim-autopairs",
+    {
+      "windwp/nvim-autopairs",
       event = "InsertEnter",
       config = true
     },
-    {"tpope/vim-fugitive"},
-    {"ggandor/leap.nvim", config = function()
+    { "tpope/vim-fugitive" },
+    {
+      "ggandor/leap.nvim",
+      config = function()
         require('leap').add_default_mappings()
       end,
     },

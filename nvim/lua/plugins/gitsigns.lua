@@ -5,8 +5,8 @@ return {
       on_attach = function()
 	local gitsigns = require('gitsigns')
 	gitsigns.setup()
-	map('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
-	map('n', '<leader>tb', gitsigns.toggle_current_line_blame)
+	vim.keymap.set('n', '<leader>hb', function() gitsigns.blame_line{full=true} end)
+	vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame)
       end,
     },
     keys = {

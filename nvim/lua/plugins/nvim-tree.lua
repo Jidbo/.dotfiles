@@ -11,17 +11,17 @@ return {
         update_cwd = true,
         renderer = {
           add_trailing = false,
-          special_files = {"README.md", "readme.md", "Pipfile", "Makefile", "package.json"},
+          special_files = { "README.md", "readme.md", "Pipfile", "Makefile", "package.json" },
           indent_markers = {
             enable = true,
           },
         },
         hijack_directories = {
-      	enable = true,
-      	auto_open = true,
+          enable = true,
+          auto_open = true,
         },
         system_open = {
-          cmd  = "open"
+          cmd = "open"
         },
         filters = {
           dotfiles = true
