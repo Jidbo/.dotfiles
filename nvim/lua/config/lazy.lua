@@ -23,6 +23,10 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
   spec = {
     {
       "jidbo/sonokai",
