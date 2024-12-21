@@ -7,7 +7,7 @@ vim.keymap.set('c', '<C-p>', '<Up>')
 vim.keymap.set('c', '<C-n>', '<Down>')
 
 -- toggle hybrid mode
-vim.keymap.set('n', '<leader>l', ':set rnu!<CR>')
+vim.keymap.set('n', '<leader>n', ':set rnu!<CR>')
 
 -- spelling
 vim.keymap.set('n', '<silent> <leader>se', ':set spell spelllang=en<CR>')

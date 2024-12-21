@@ -41,7 +41,6 @@ return {
     vim.keymap.set('n', '<leader>s', treesitter)
   end,
   keys = {
-    { '<leader>l',   '<cmd>Telescope live_grep<CR>' },
-    { '<silent> gy', '<cmd>Telescope treesitter<CR>' }
+    { '<leader>l', '<cmd>Telescope live_grep<CR>' },
   }
 }
