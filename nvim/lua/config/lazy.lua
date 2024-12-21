@@ -41,7 +41,12 @@ require("lazy").setup({
       event = "InsertEnter",
       config = true
     },
-    { "tpope/vim-fugitive" },
+    {
+      "tpope/vim-fugitive",
+      keys = {
+        { '<leader>g', '<cmd>Git<CR>' }
+      }
+    },
     {
       "ggandor/leap.nvim",
       config = function()
@@ -63,5 +68,5 @@ require("lazy").setup({
     { import = "plugins" },
   },
   -- install = { colorscheme = { "habamax" } },
-  checker = { enabled = true },
+  -- checker = { enabled = true },
 })
