@@ -1,0 +1,74 @@
+
+# general settings
+copy-on-select = true
+shell-integration = detect
+shell-integration-features = true
+confirm-close-surface = false
+quit-after-last-window-closed = true
+link-url = true
+scrollback-limit = 100000
+mouse-hide-while-typing = true
+cursor-click-to-move = true
+
+# Fonts
+font-family = "FiraCode Nerd Font Mono"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# quick terminal
+quick-terminal-position = bottom
+quick-terminal-autohide = true
+quick-terminal-animation-duration = 0
+quick-terminal-screen = mouse
+keybind = global:super+option+shift+ctrl+t=toggle_quick_terminal
+
+# macos specific settings
+macos-titlebar-style = hidden
+macos-option-as-alt = left
+macos-auto-secure-input = true
+
+# macos icon settings
+macos-icon = custom-style
+macos-icon-ghost-color = ff0000
+macos-icon-frame = plastic
+
+# THEME
+background = 1a1d1c
+foreground = F8F7FE
+cursor-color = F8F8F2
+
+# Black
+palette = 0=#1D1D19
+palette = 8=#1D1D19
+
+# Red
+palette = 1=#EE4F84
+palette = 9=#F48FB1
+
+# Green
+palette = 2=#53E2AE
+palette = 1=#A1EFD3
+
+# Yellow
+palette = 3=#F1FF52
+palette = 1=#F1FA8C
+
+# Blue
+palette = 4=#6498EF
+palette = 1=#92B6F4
+
+# Magenta
+palette = 5=#985EFF
+palette = 1=#BD99FF
+
+# Cyan
+palette = 6=#24D1E7
+palette = 1=#87DFEB
+
+# White
+palette = 7=#E5E5E5
+palette = 1=#F8F8F2
+
+selection-foreground = F8F8F2
+selection-background = 8ab4f2
