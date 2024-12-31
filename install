@@ -1,15 +1,40 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-set -e
+# Path to your dotfiles.
+export DOTFILES=$HOME/.dotfiles
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+echo "Setting up your system..."
+echo "Your dotfiles path: $DOTFILES"
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# fish
+rm -rf $HOME/.config/fish
+mkdir -p $HOME/.config
+ln -s $DOTFILES/fish $HOME/.config/fish
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+# Relink other software configs
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# tmux
+rm -rf $HOME/.tmux.conf
+ln -s $DOTFILES/shell/tmux.conf $HOME/.tmux.conf
+
+# nvim
+rm -rf $HOME/.config/nvim
+mkdir -p $HOME/.config
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+# VIM config:
+rm -f $HOME/.vimrc
+ln -s $DOTFILES/vim/vimrc $HOME/.vimrc
+# Install vim-plug for vim
+if [ ! -f $DOTFILES/vim/vim/autoload/plug.vim ]; then
+  echo "Installing vim-plug for vim"
+  curl -fLo $DOTFILES/vim/vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  vim +PlugInstall +qall
+fi
+
+# ghostty
+rm -rf $HOME/.config/ghostty
+mkdir -p $HOME/.config
+ln -s $DOTFILES/ghostty $HOME/.config/ghostty
+
+echo "Done! All set up, ready to be used!"
