@@ -17,10 +17,9 @@ starship init fish | source
 
 git-town completions fish | source
 
-abbr -a -- gst 'git status' # imported from a universal variable, see `help abbr`
-abbr -a -- gco 'git checkout' # imported from a universal variable, see `help abbr`
-abbr -a -- ip 'ip -c' # imported from a universal variable, see `help abbr`
-abbr -a -- mux tmuxinator # imported from a universal variable, see `help abbr`
+abbr -a -- gst 'git status'
+abbr -a -- gco 'git checkout'
+abbr -a -- ip 'ip -c'
 abbr -a -- ga 'git add -A'
 abbr -a --set-cursor -- gcm "git commit -m '%'"
 abbr -a --set-cursor -- gca "git add -A && git commit"
