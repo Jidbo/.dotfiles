@@ -9,11 +9,13 @@ bind -e -a \ew
 bind \ew forward-word
 bind \cr __fzf_reverse_isearch
 
+set -g GPG_TTY (tty)
+
+set -g JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
-starship init fish | source
 
 git-town completions fish | source
 
