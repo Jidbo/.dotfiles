@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# We use this custom script here to also allow interactive shell sessions e.g. php
+# invoked in JS scripts to use the correct isolated version.
+
+DIR=$HOME/.composer/vendor/laravel/valet
+PHP=/opt/homebrew/opt/php/bin/php
+
+# Proxy PHP commands to the "php" executable on the isolated site
+if [[ $1 == *"--site="* ]]; then
+    SITE=${2#*=}
+    $($PHP "$DIR/cli/valet.php" which-php $SITE) "${@:2}"
+else
+    $($PHP "$DIR/cli/valet.php" which-php) "${@:1}"
+fi
+
+exit
