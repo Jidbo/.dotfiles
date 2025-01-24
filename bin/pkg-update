@@ -3,8 +3,10 @@
 echo "\n > Upgrading brew packages...\n"
 brew update
 brew upgrade
+
 # Fixes gnupg link conflicts with GPGSuite
 brew unlink gnupg
+gpgconf --kill gpg-agent
 
 # Link libpq to access psql
 brew link --force libpq
@@ -18,12 +20,5 @@ composer global upgrade
 
 echo "\n > Running valet install...\n"
 valet install
-
-echo "\n > Upgrading nvim packages...\n"
-nvim +PlugUpgrade +PlugUpdate +TSUpdate +MasonUpdate +qall
-
-echo "\n > Upgrading znap plugins...\n"
-znap-update
-echo "\n"
 
 echo "\n > Done 🚀 enjoy your day!\n"
